@@ -11,7 +11,7 @@
 package main
 
 import (
-	"GoWorkspace/Go360Safe/src/views"
+	"GoWorkspace/qo_360_safe/src/views"
 	"fmt"
 )
 

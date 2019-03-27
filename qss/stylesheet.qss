@@ -1,0 +1,36 @@
+/***********************修改顶端右上四个按钮的图片***************************/
+/* 这个是初始显示状态 */
+QPushButton#close {
+    border-image: url(resources/top/top_close.png);
+}
+
+/* 这个有啥用呢? 鼠标点击上去响应*/
+QPushButton#close::hover {
+    border-image: url(resources/top/top_close_b.png);
+}
+
+QPushButton#min {
+    border-image: url(resources/top/top_min.png);
+}
+
+QPushButton#min::hover {
+    border-image: url(resources/top/top_min_b.png);
+}
+
+QPushButton#menu {
+    border-image: url(resources/top/top_menu.png);
+}
+
+/* 我这里没有，点击的图片，所以设置跟普通一样 */
+QPushButton#menu::hover {
+    border-image: url(resources/top/top_menu.png);
+}
+
+QPushButton#theme {
+    border-image: url(resources/top/top_theme.png);
+}
+
+/* 我这里没有，点击的图片，所以设置跟普通一样 */
+QPushButton#theme::hover {
+    border-image: url(resources/top/top_theme.png);
+}
