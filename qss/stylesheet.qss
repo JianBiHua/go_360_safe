@@ -34,3 +34,27 @@ QPushButton#theme {
 QPushButton#theme::hover {
     border-image: url(resources/top/top_theme.png);
 }
+
+/******************显示TOOLBUTTON************************/
+QToolButton { /* italicize selected tabs */
+    border: 0px;
+    border-radius: 0px;
+    background-color: #00000000;
+    color:rgb(255, 255, 255);
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+/* 这个似乎无效 */
+*[page_selected="true"] { /* italicize selected tabs */
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+    stop:0 rgba(0, 0, 0, 0),
+    stop:1 rgba(0, 0, 0, 32));
+}
+
+/******************************************/
+#WidgetLog_Label {
+    background-color: #00000000;
+    color:rgb(255, 255, 255);
+    text-align: center;
+}

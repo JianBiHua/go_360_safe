@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdd8f000-8dcb-4e36-8e97-51258a0f0e9b" name="Default Changelist" comment="提交项目">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/top/top_close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/top/top_close_b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/top/top_menu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/top/top_min.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/top/top_min_b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/top/top_theme.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/WaveBallWidget.go" afterDir="false" />
+    <list default="true" id="bdd8f000-8dcb-4e36-8e97-51258a0f0e9b" name="Default Changelist" comment="第二节了，">
+      <change afterPath="$PROJECT_DIR$/resources/icon_w.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab/tab_actions.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab/tab_app.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab/tab_clear.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab/tab_fix.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab/tab_home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab/tab_horse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab/tab_market.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab/tab_optimize.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/ToolButton.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/WidgetLog.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qss/stylesheet.qss" beforeDir="false" afterPath="$PROJECT_DIR$/qss/stylesheet.qss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/MainWindow.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/MainWindow.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,20 +28,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+            <state relative-caret-position="206">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <element signature="e#218#270#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/views/MainWindow.go">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/ToolButton.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="164" column="49" lean-forward="true" selection-start-line="164" selection-start-column="49" selection-end-line="164" selection-end-column="49" />
-              <folding>
-                <element signature="e#226#360#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="195">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="133" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -48,8 +49,62 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/qss/stylesheet.qss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="25" column="49" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="49" />
+            <state relative-caret-position="408">
+              <caret line="58" column="23" lean-forward="true" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/views/MainWindow.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../github.com/therecipe/qt/core/core.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="55292" column="20" selection-start-line="55292" selection-start-column="4" selection-end-line="55292" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/WidgetLog.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="70" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../github.com/therecipe/qt/widgets/widgets.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="145">
+              <caret line="56111" column="48" lean-forward="true" selection-start-line="56111" selection-start-column="48" selection-end-line="56111" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../github.com/therecipe/qt/gui/gui.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="11791" column="5" selection-start-line="11791" selection-start-column="5" selection-end-line="11791" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/WaveBallWidget.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -97,14 +152,21 @@
         <option value="$PROJECT_DIR$/src/main.go" />
         <option value="$PROJECT_DIR$/src/views/RoundButton.go" />
         <option value="$PROJECT_DIR$/src/views/WaveBallWidget.go" />
+        <option value="$PROJECT_DIR$/src/views/WigetHorse.go" />
+        <option value="$PROJECT_DIR$/src/views/WidgetHome.go" />
+        <option value="$PROJECT_DIR$/src/views/WidgetHorse.go" />
+        <option value="$PROJECT_DIR$/src/views/WidgetBase.go" />
+        <option value="$PROJECT_DIR$/src/views/WidgetInterface.go" />
+        <option value="$PROJECT_DIR$/src/views/ToolButton.go" />
+        <option value="$PROJECT_DIR$/src/views/MainWindow.go" />
+        <option value="$PROJECT_DIR$/src/views/MainWindow.go" />
         <option value="$PROJECT_DIR$/qss/stylesheet.qss" />
-        <option value="$PROJECT_DIR$/src/views/MainWindow.go" />
-        <option value="$PROJECT_DIR$/src/views/MainWindow.go" />
+        <option value="$PROJECT_DIR$/src/views/WidgetLog.go" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="223" />
+    <option name="x" value="185" />
     <option name="y" value="23" />
     <option name="width" value="1407" />
     <option name="height" value="877" />
@@ -238,13 +300,13 @@
     </recent_temporary>
   </component>
   <component name="ToolWindowManager">
-    <frame x="223" y="23" width="1407" height="877" extended-state="0" />
+    <frame x="185" y="23" width="1407" height="877" extended-state="0" />
     <layout>
       <window_info id="Repositories" weight="0.32967034" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25714287" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25714287" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="调试" weight="0.3299363" />
+      <window_info anchor="bottom" id="调试" visible="true" weight="0.3299363" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299363" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3299363" />
@@ -254,7 +316,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.3299363" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3299363" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -357,7 +419,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
     <MESSAGE value="提交项目" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交项目" />
+    <MESSAGE value="第二节了，" />
+    <option name="LAST_COMMIT_MESSAGE" value="第二节了，" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -399,48 +462,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../github.com/therecipe/qt/core/core.go">
+    <entry file="file://$PROJECT_DIR$/src/views/WidgetHorse.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-292">
-          <caret line="57008" column="14" selection-start-line="57008" selection-start-column="4" selection-end-line="57008" selection-end-column="14" />
+        <state relative-caret-position="285">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/WidgetInterface.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/WidgetHome.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/WaveBallWidget.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+        <state relative-caret-position="270">
+          <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../github.com/therecipe/qt/gui/gui.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="11791" column="5" selection-start-line="11791" selection-start-column="5" selection-end-line="11791" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/icon_w.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qss/stylesheet.qss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="58" column="23" lean-forward="true" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../github.com/therecipe/qt/widgets/widgets.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="103667" column="52" selection-start-line="103667" selection-start-column="52" selection-end-line="103667" selection-end-column="52" />
+        <state relative-caret-position="145">
+          <caret line="56111" column="48" lean-forward="true" selection-start-line="56111" selection-start-column="48" selection-end-line="56111" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../github.com/therecipe/qt/core/core.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="55292" column="20" selection-start-line="55292" selection-start-column="4" selection-end-line="55292" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/ToolButton.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="133" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        <state relative-caret-position="206">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#218#270#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qss/stylesheet.qss">
+    <entry file="file://$PROJECT_DIR$/src/views/WidgetLog.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="25" column="49" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="49" />
+        <state relative-caret-position="210">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="70" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/MainWindow.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="164" column="49" lean-forward="true" selection-start-line="164" selection-start-column="49" selection-end-line="164" selection-end-column="49" />
-          <folding>
-            <element signature="e#226#360#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="166">
+          <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
         </state>
       </provider>
     </entry>
