@@ -53,6 +53,14 @@ func NewToolButton2(parent *widgets.QWidget, text, icon string) *ToolButton {
 	return &tb
 }
 
+// 析构函数，创建一个ToolButton
+func NewToolButton3(widget *widgets.QToolButton, text, icon string, w, h int) *ToolButton {
+	var tb = ToolButton{nil, text, icon, w, w, nil, -1}
+	tb.widget = widget
+	tb.init()
+	return &tb
+}
+
 // init
 // 初始化变量函数
 func (tb *ToolButton) init() {
@@ -62,12 +70,15 @@ func (tb *ToolButton) init() {
 // showWidget
 // 显示ToolButton
 func (tb *ToolButton) showWidget() {
-	tb.widget = widgets.NewQToolButton(tb.parent)
-
+	if tb.widget == nil {
+		tb.widget = widgets.NewQToolButton(tb.parent)
+	}
 	action := widgets.NewQAction(nil)
-	action.SetText(tb.Text)
+	action.SetIconText(tb.Text)
 	action.SetIcon(gui.NewQIcon5(tb.Icon))
+	//action.SetIconText()
 	//
+	tb.widget.SetAutoRaise(false)
 	tb.widget.SetDefaultAction(action)
 	tb.widget.SetIconSize(core.NewQSize2(tb.Icon_width, tb.Icon_height))
 	tb.widget.SetToolButtonStyle(core.Qt__ToolButtonTextUnderIcon)

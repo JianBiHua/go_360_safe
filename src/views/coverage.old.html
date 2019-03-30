@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        body {
+            background: black;
+            color: rgb(80, 80, 80);
+        }
+
+        body, pre, #legend span {
+            font-family: Menlo, monospace;
+            font-weight: bold;
+        }
+
+        #topbar {
+            background: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 42px;
+            border-bottom: 1px solid rgb(80, 80, 80);
+        }
+
+        #content {
+            margin-top: 50px;
+        }
+
+        #nav, #legend {
+            float: left;
+            margin-left: 10px;
+        }
+
+        #legend {
+            margin-top: 12px;
+        }
+
+        #nav {
+            margin-top: 10px;
+        }
+
+        #legend span {
+            margin: 0 5px;
+        }
+
+        .cov0 {
+            color: rgb(192, 0, 0)
+        }
+
+        .cov1 {
+            color: rgb(128, 128, 128)
+        }
+
+        .cov2 {
+            color: rgb(116, 140, 131)
+        }
+
+        .cov3 {
+            color: rgb(104, 152, 134)
+        }
+
+        .cov4 {
+            color: rgb(92, 164, 137)
+        }
+
+        .cov5 {
+            color: rgb(80, 176, 140)
+        }
+
+        .cov6 {
+            color: rgb(68, 188, 143)
+        }
+
+        .cov7 {
+            color: rgb(56, 200, 146)
+        }
+
+        .cov8 {
+            color: rgb(44, 212, 149)
+        }
+
+        .cov9 {
+            color: rgb(32, 224, 152)
+        }
+
+        .cov10 {
+            color: rgb(20, 236, 155)
+        }
+
+    </style>
+</head>
+<body>
+<div id="topbar">
+    <div id="nav">
+        <select id="files">
+
+            <option value="file0">GoWorkspace/qo_360_safe/src/views/MainWindow.go (0.0%)</option>
+
+            <option value="file1">GoWorkspace/qo_360_safe/src/views/PageActions.go (0.0%)</option>
+
+            <option value="file2">GoWorkspace/qo_360_safe/src/views/PageClear.go (0.0%)</option>
+
+            <option value="file3">GoWorkspace/qo_360_safe/src/views/PageFix.go (0.0%)</option>
+
+            <option value="file4">GoWorkspace/qo_360_safe/src/views/PageHome.go (0.0%)</option>
+
+            <option value="file5">GoWorkspace/qo_360_safe/src/views/PageHorse.go (0.0%)</option>
+
+            <option value="file6">GoWorkspace/qo_360_safe/src/views/PageOptimize.go (0.0%)</option>
+
+            <option value="file7">GoWorkspace/qo_360_safe/src/views/ToolButton.go (0.0%)</option>
+
+            <option value="file8">GoWorkspace/qo_360_safe/src/views/WaveBallWidget.go (0.0%)</option>
+
+            <option value="file9">GoWorkspace/qo_360_safe/src/views/WidgetLog.go (0.0%)</option>
+
+        </select>
+    </div>
+    <div id="legend">
+        <span>not tracked</span>
+
+        <span class="cov0">not covered</span>
+        <span class="cov8">covered</span>
+
+    </div>
+</div>
+<div id="content">
+		
+		<pre class="file" id="file0" style="display: none">/*
+ * Copyright (C), 2015-2019, 简笔画工作室
+ * FileName: MainWindow.go
+ * Author: 简笔画
+ * Date: 2019.03.26 21:06
+ * Description: 360安全卫士，主窗口文件。
+ * History:
+ * &lt;author&gt; &lt;time&gt; &lt;version&gt; &lt;desc&gt;
+ * 作者姓名 修改时间 版本号 描述
+ */
+
+ // Package views is all user define view struct, Contains one or more QWidgets pointer
+package views
+
+import (
+        "fmt"
+        "github.com/therecipe/qt/core"
+        "github.com/therecipe/qt/gui"
+        "github.com/therecipe/qt/widgets"
+        "io/ioutil"
+        "os"
+)
+
+// WIDTH is window max and min width
+const WIDTH = 920
+// HEIGHT is window max and min height
+const HEIGHT = 580
+
+// PAGE_COUNT is max page count
+const PAGE_COUNT = 8
+
+// MainWindow is a main window
+// 显示主界面。
+type MainWindow struct {
+        //
+        app *widgets.QApplication
+        // 窗体
+        window *widgets.QMainWindow
+        //
+        stackWidget *widgets.QStackedWidget
+
+        // 起始点击坐标
+        startPos  *core.QPoint
+        windowPos *core.QPoint
+}
+
+// 模拟构造函数
+// 一个全局函数
+func NewMainWindow() *MainWindow <span class="cov0" title="0">{
+        wm := &amp;MainWindow{}
+        wm.init()
+        return wm
+}</span>
+
+// Show is show main windows
+// 让应用程序进入循环。
+// is public func
+func (mw *MainWindow) Show() <span class="cov0" title="0">{
+        mw.showMainWindow()
+        mw.showSubviews()
+}</span>
+
+// Exec is application into loop
+//
+// 让应用程序进入循环。
+func (mw *MainWindow) Exec() <span class="cov0" title="0">{
+        mw.window.Show()
+        mw.app.Exec()
+}</span>
+
+// Init is init variables
+// 初始化一些变量等
+func (mw *MainWindow) init() {<span class="cov0" title="0">
+
+}</span>
+
+// Show is to show main Window
+// 显示主窗口
+func (mw *MainWindow) showMainWindow() <span class="cov0" title="0">{
+
+        mw.app = widgets.NewQApplication(len(os.Args), os.Args)
+        // 设置qss，相当于html中的css文件
+        data, err := ioutil.ReadFile("qss/stylesheet.qss")
+        if err != nil </span><span class="cov0" title="0">{
+                fmt.Println("File reading error", err)
+                return
+        }</span>
+
+        <span class="cov0" title="0">mw.app.SetStyleSheet(string(data))
+
+        mw.window = widgets.NewQMainWindow(nil, 0)
+        // 设置标题
+        mw.window.SetWindowTitle("360手机助手")
+        // 设置宽高
+        mw.window.SetMinimumSize2(WIDTH, HEIGHT)
+        // 无法缩放
+        mw.window.SetMaximumHeight(HEIGHT)
+        mw.window.SetMaximumWidth(WIDTH)
+        // 设置背景色
+        mw.window.SetStyleSheet("background-color: #22CB64")
+        // 去掉标题栏
+        mw.window.SetWindowFlags(core.Qt__FramelessWindowHint)
+        // 启动鼠标移动
+        mw.window.SetMouseTracking(true)
+        // 鼠标移动
+        mw.window.ConnectMouseMoveEvent(func(event *gui.QMouseEvent) </span><span class="cov0" title="0">{
+                // 鼠标左键按下时处理
+                if event.Button() == core.Qt__LeftButton </span><span class="cov0" title="0">{
+                        mw.window.Move2(mw.windowPos.X()+event.GlobalX()-mw.startPos.X(),
+                                mw.windowPos.Y()+event.GlobalY()-mw.startPos.Y())
+                }</span>
+        })
+        // 鼠标按下
+        <span class="cov0" title="0">mw.window.ConnectMousePressEvent(func(event *gui.QMouseEvent) </span><span
+                    class="cov0" title="0">{
+                // 左键按下时处理
+                if event.Button() == core.Qt__LeftButton </span><span class="cov0" title="0">{
+                        // 保存坐标
+                        mw.startPos = event.GlobalPos()
+                        mw.windowPos = mw.window.Pos()
+                }</span>
+        })
+
+}
+
+// ShowSubViews show all sub views
+//
+// 显示子界面
+func (mw *MainWindow) showSubviews() <span class="cov0" title="0">{
+
+        mw.showTopLayout()
+        mw.showToolBarsLayout()
+        mw.showStackedWidget()
+
+}</span>
+
+// showTopLayout show top layout
+// 显示顶部的布局
+func (mw *MainWindow) showTopLayout() <span class="cov0" title="0">{
+
+        widget := widgets.NewQWidget(mw.window, 0)
+        widget.SetLayout(widgets.NewQVBoxLayout())
+        widget.SetGeometry2(0, 0, WIDTH, 30)
+
+        // ==============右侧四个按钮， 从右往左=============
+        // 关闭按钮
+        close := widgets.NewQPushButton(widget)
+        close.SetGeometry2(WIDTH-30, 5, 20, 20)
+        // 设置这个有什么用呢? 为了让qss找到这个QPushButton
+        close.SetObjectName("close")
+        close.ConnectClicked(func(checked bool) </span><span class="cov0" title="0">{
+                // 应用退出
+                mw.app.Exit(0)
+        }</span>)
+
+        // 最小化按钮
+        <span class="cov0" title="0">min := widgets.NewQPushButton(widget)
+        min.SetGeometry2(WIDTH-60, 5, 20, 20)
+        min.SetObjectName("min")
+        min.ConnectClicked(func(checked bool) </span><span class="cov0" title="0">{
+                // 应用最小化， 他喵的居然无效。
+                mw.window.ShowMinimized()
+        }</span>)
+
+        // 菜单按钮
+        <span class="cov0" title="0">menu := widgets.NewQPushButton(widget)
+        menu.SetGeometry2(WIDTH-90, 5, 20, 20)
+        menu.SetObjectName("menu")
+
+        // 主题按钮
+        theme := widgets.NewQPushButton(widget)
+        theme.SetGeometry2(WIDTH-120, 5, 20, 20)
+        theme.SetObjectName("theme")
+
+        // 显示图标
+        icon := widgets.NewQWidget(widget, core.Qt__Widget)
+        icon.SetGeometry2(5, 5, 20, 20)
+        icon.SetStyleSheet("border-image: url(resources/icon.png)")
+
+        // 显示名字
+        title := widgets.NewQLabel(widget, core.Qt__Widget)
+        title.SetGeometry2(35, 5, 100, 20)
+        title.SetText("360安全卫士11")
+        title.SetStyleSheet("color: #FFFFFF")</span>
+}
+
+// 用一用GO的数组喽
+var toolButtons [8]*ToolButton
+
+// 图片名称
+var toolButtons_icon_name = [...]string{
+        "resources/tab/tab_home.png",
+        "resources/tab/tab_horse.png",
+        "resources/tab/tab_clear.png",
+        "resources/tab/tab_fix.png",
+        "resources/tab/tab_optimize.png",
+        "resources/tab/tab_actions.png",
+        "resources/tab/tab_market.png",
+        "resources/tab/tab_app.png"}
+
+// 名称
+var toolButtons_name = [...]string{
+        "电脑体验",
+        "木马查杀",
+        "电脑清理",
+        "系统修复",
+        "优化加速",
+        "功能大全",
+        "电360商城",
+        "软件管家"}
+
+// 在用用GO的枚举吧，哈哈
+const (
+        // 电脑体验
+        ToolButtonType_HOME = iota
+        // 木马扫描
+        ToolButtonType_HORSE
+        // 电脑清除
+        ToolButtonType_CLEAR
+        // 系统修复
+        ToolButtonType_FIX
+        // 功能大全
+        ToolButtonType_ACTIONS
+        // 优化加速
+        ToolButtonType_YOUHUA
+        // 360商城
+        ToolButtonType_MARKET
+        // 软件管家
+        ToolButtonType_APP
+)
+
+// showToolBarsLayout show toolbars layout
+// 显示工具按钮
+func (mw *MainWindow) showToolBarsLayout() <span class="cov0" title="0">{
+
+        widget := widgets.NewQWidget(mw.window, 0)
+        // 设置一个QVboxLayout布局
+        widget.SetLayout(widgets.NewQVBoxLayout())
+        widget.SetGeometry2(0, 30, WIDTH, 90)
+
+        // 添加8个ToolButton
+        for i := 0; i &lt; PAGE_COUNT; i++ </span><span class="cov0" title="0">{
+                // 创建ToolButton
+                toolButtons[i] = NewToolButton2(widget, toolButtons_name[i],
+                        toolButtons_icon_name[i])
+                // 设置显示位置
+                toolButtons[i].Widget().SetGeometry2(20+90*i, 0, 90, 90)
+                // 设置点击状态
+                toolButtons[i].SetChecked(i == 0)
+                // 按下时执行
+                toolButtons[i].ConnectClicked(mw.onToolButtonDidClicked)
+                // 设置一个用户标识
+                toolButtons[i].SetUserObject(i)
+        }</span>
+
+        // 显示我的章子,
+        // 名人作画都会盖个章，则也学学名人，盖个章呗 呵呵。
+        <span class="cov0" title="0">wl := NewWidgetLog(widget)
+        wl.Widget().SetGeometry2(740, 15, 300, 90)</span>
+}
+
+// onToolButtonDidClicked
+// ToolButton中的QToolButton控件被点击时调用。
+func (mw *MainWindow) onToolButtonDidClicked(button *ToolButton) <span class="cov0" title="0">{
+        // 看这个UserObject，用来区别到底是那个控件被点击了
+        fmt.Println("UserObject", button.UserObject)
+        // 只有i==UserObject，说明就是那个控件被点击了
+        // 为啥减2呢, 因为360安全卫士就是这么设计的
+        // 后面两个得特殊处理的。
+        if button.UserObject &lt; PAGE_COUNT-2 </span><span class="cov0" title="0">{
+                for i := 0; i &lt; PAGE_COUNT-2; i++ </span><span class="cov0" title="0">{
+                        toolButtons[i].SetChecked(i == button.UserObject)
+                }</span>
+
+                // 改变当前Page
+                <span class="cov0" title="0">mw.stackWidget.SetCurrentIndex(button.UserObject)</span>
+        }
+}
+
+// showStackedWidget
+// 显示stackedWidget
+func (mw *MainWindow) showStackedWidget() <span class="cov0" title="0">{
+        mw.stackWidget = widgets.NewQStackedWidget(mw.window)
+        mw.stackWidget.SetGeometry2(0, 120, WIDTH, HEIGHT-120)
+        mw.stackWidget.SetCurrentIndex(0)
+        mw.stackWidget.SetStyleSheet("background: #FFFFFF")
+
+        // 接口的初次应用
+        var widgetInterface WidgetInterface
+
+        // 将PageHome，断言转换为接口
+        // 因为go没有继承接口的概念，所以这里实现使用转换来处理的
+        widgetInterface = NewPageHome()
+        //创建Page,并显示。
+        mw.stackWidget.AddWidget(widgetInterface.Widget())
+
+        // 将HorseHome，断言转换为接口
+        // 因为go没有继承接口的概念，所以这里实现使用转换来处理的
+        widgetInterface = NewPageHorse()
+        //创建Page,并显示。
+        mw.stackWidget.AddWidget(widgetInterface.Widget())
+
+        widgetInterface = NewPageClear()
+        mw.stackWidget.AddWidget(widgetInterface.Widget())
+
+        widgetInterface = NewPageFix()
+        //创建Page,并显示。
+        mw.stackWidget.AddWidget(widgetInterface.Widget())
+
+        widgetInterface = NewPageOptimize()
+        //创建Page,并显示。
+        mw.stackWidget.AddWidget(widgetInterface.Widget())
+
+        widgetInterface = NewPageActions()
+        //创建Page,并显示。
+        mw.stackWidget.AddWidget(widgetInterface.Widget())
+}</span>
+</pre>
+
+    <pre class="file" id="file1" style="display: none">package views
+
+import (
+        "github.com/therecipe/qt/core"
+        "github.com/therecipe/qt/uitools"
+        "github.com/therecipe/qt/widgets"
+)
+
+type PageActions struct {
+        widget *widgets.QWidget
+}
+
+func NewPageActions () *PageActions  <span class="cov0" title="0">{
+        ph := new(PageActions)
+        ph.init()
+        return ph;
+}</span>
+
+// 从UI中加载widget
+func (ph *PageActions) init ()  <span class="cov0" title="0">{
+        ph.widget = widgets.NewQWidget(nil, 0)
+
+        var loader = uitools.NewQUiLoader(nil)
+        var file = core.NewQFile2("ui/page_actions.ui")
+
+        file.Open(core.QIODevice__ReadOnly)
+        var formWidget = loader.Load(file, ph.widget)
+        file.Close()
+
+        //var (
+        //        ui_inputSpinBox1 = widgets.NewQSpinBoxFromPointer(widget.FindChild("inputSpinBox1", core.Qt__FindChildrenRecursively).Pointer())
+        //        ui_inputSpinBox2 = widgets.NewQSpinBoxFromPointer(widget.FindChild("inputSpinBox2", core.Qt__FindChildrenRecursively).Pointer())
+        //        ui_outputWidget  = widgets.NewQLabelFromPointer(widget.FindChild("outputWidget", core.Qt__FindChildrenRecursively).Pointer())
+        //)
+        //
+        //ui_inputSpinBox1.ConnectValueChanged(func(value int) {
+        //        ui_outputWidget.SetText(fmt.Sprint(value + ui_inputSpinBox2.Value()))
+        //})
+        //
+        //ui_inputSpinBox2.ConnectValueChanged(func(value int) {
+        //        ui_outputWidget.SetText(fmt.Sprint(value + ui_inputSpinBox1.Value()))
+        //})
+
+        var layout = widgets.NewQVBoxLayout()
+        layout.AddWidget(formWidget, 0, 0)
+        ph.widget.SetLayout(layout)
+}</span>
+
+
+func (ph *PageActions) Widget () *widgets.QWidget  <span class="cov0" title="0">{
+        return ph.widget
+}</pre>
+
+    <pre class="file" id="file2" style="display: none">package views
+
+import (
+        "github.com/therecipe/qt/core"
+        "github.com/therecipe/qt/uitools"
+        "github.com/therecipe/qt/widgets"
+)
+
+type PageClear struct {
+        widget *widgets.QWidget
+}
+
+func NewPageClear () *PageClear  <span class="cov0" title="0">{
+        ph := new(PageClear)
+        ph.init()
+        return ph;
+}</span>
+
+// 从UI中加载widget
+func (ph *PageClear) init ()  <span class="cov0" title="0">{
+        ph.widget = widgets.NewQWidget(nil, 0)
+
+        var loader = uitools.NewQUiLoader(nil)
+        var file = core.NewQFile2("ui/page_clear.ui")
+
+        file.Open(core.QIODevice__ReadOnly)
+        var formWidget = loader.Load(file, ph.widget)
+        file.Close()
+
+        var (
+                ui_pushbutton = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("roundButton", core.Qt__FindChildrenRecursively).Pointer())
+                ui_title = widgets.NewQLabelFromPointer(ph.widget.FindChild("title", core.Qt__FindChildrenRecursively).Pointer())
+                ui_subtitle  = widgets.NewQLabelFromPointer(ph.widget.FindChild("subtitle", core.Qt__FindChildrenRecursively).Pointer())
+                )
+
+        ui_pushbutton.SetStyleSheet(`border:none;
+                background-color: #16da6c;
+                border-radius: 30px;
+                color: #FFFFFF;
+                font-size: 25px;`)
+        ui_title.SetStyleSheet(`color: #444444;font-size: 25px;`)
+        ui_subtitle.SetStyleSheet(`color: #9b9999;font-size: 16px;`)
+
+
+        var layout = widgets.NewQVBoxLayout()
+        layout.AddWidget(formWidget, 0, 0)
+        ph.widget.SetLayout(layout)
+}</span>
+
+
+func (ph *PageClear) Widget () *widgets.QWidget  <span class="cov0" title="0">{
+        return ph.widget
+}</pre>
+
+    <pre class="file" id="file3" style="display: none">package views
+
+import (
+        "github.com/therecipe/qt/core"
+        "github.com/therecipe/qt/uitools"
+        "github.com/therecipe/qt/widgets"
+)
+
+type PageFix struct {
+        widget *widgets.QWidget
+}
+
+func NewPageFix () *PageFix  <span class="cov0" title="0">{
+        ph := new(PageFix)
+        ph.init()
+        return ph;
+}</span>
+
+// 从UI中加载widget
+func (ph *PageFix) init ()  <span class="cov0" title="0">{
+        ph.widget = widgets.NewQWidget(nil, 0)
+
+        var loader = uitools.NewQUiLoader(nil)
+        var file = core.NewQFile2("ui/page_fix.ui")
+
+        file.Open(core.QIODevice__ReadOnly)
+        loader.Load(file, ph.widget)
+        file.Close()
+
+        var (
+                ui_pushbutton = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("roundButton", core.Qt__FindChildrenRecursively).Pointer())
+                ui_title = widgets.NewQLabelFromPointer(ph.widget.FindChild("title", core.Qt__FindChildrenRecursively).Pointer())
+                ui_subtitle  = widgets.NewQLabelFromPointer(ph.widget.FindChild("subtitle", core.Qt__FindChildrenRecursively).Pointer())
+                )
+
+        ui_pushbutton.SetStyleSheet(`border:none;
+                background-color: #16da6c;
+                border-radius: 30px;
+                color: #FFFFFF;
+                font-size: 25px;`)
+        ui_title.SetStyleSheet(`color: #444444;font-size: 25px;`)
+        ui_subtitle.SetStyleSheet(`color: #9b9999;font-size: 16px;`)
+}</span>
+
+
+func (ph *PageFix) Widget () *widgets.QWidget  <span class="cov0" title="0">{
+        return ph.widget
+}</pre>
+
+    <pre class="file" id="file4" style="display: none">package views
+
+import (
+        "github.com/therecipe/qt/core"
+        "github.com/therecipe/qt/uitools"
+        "github.com/therecipe/qt/widgets"
+)
+
+// 这个结构体，暂时只需要一个QWidget，之后肯定会被扩充
+type PageHome struct {
+        widget *widgets.QWidget
+}
+
+// 这些都跟之前一样的
+func NewPageHome () *PageHome  <span class="cov0" title="0">{
+        ph := new(PageHome)
+        ph.init()
+        return ph;
+}</span>
+
+// 从UI中加载widget
+// 核心代码
+func (ph *PageHome) init ()  <span class="cov0" title="0">{
+        ph.widget = widgets.NewQWidget(nil, 0)
+
+        // 核心代码1: 加载page_home.ui，加载不同的页面，需要修改*.ui
+        var loader = uitools.NewQUiLoader(nil)
+        var file = core.NewQFile2("ui/page_home.ui")
+
+        // 核心代码2：让page_home.ui与widget关联
+        file.Open(core.QIODevice__ReadOnly)
+        loader.Load(file, ph.widget)
+        file.Close()
+
+        var (
+                // 核心代码3： 从ui中获取objectname=roundButton等的控件，
+                // 注意NewQSpinBoxFromPointer，NewQLabelFromPointer对应不一样的控件，
+                ui_pushbutton = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("roundButton", core.Qt__FindChildrenRecursively).Pointer())
+                ui_title = widgets.NewQLabelFromPointer(ph.widget.FindChild("title", core.Qt__FindChildrenRecursively).Pointer())
+                ui_subtitle  = widgets.NewQLabelFromPointer(ph.widget.FindChild("subtitle", core.Qt__FindChildrenRecursively).Pointer())
+
+                fangHuZhongXin  = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("fangHuZhongXin", core.Qt__FindChildrenRecursively).Pointer())
+                wangGouXianPei  = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("wangGouXianPei", core.Qt__FindChildrenRecursively).Pointer())
+                fanLeSuo  = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("fanLeSuo", core.Qt__FindChildrenRecursively).Pointer())
+
+                tbApp  = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("tbApp", core.Qt__FindChildrenRecursively).Pointer())
+                tbService  = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("tbService", core.Qt__FindChildrenRecursively).Pointer())
+                tbHandler  = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("tbHandler", core.Qt__FindChildrenRecursively).Pointer())
+                tbFix  = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("tbFix", core.Qt__FindChildrenRecursively).Pointer())
+                tbMore  = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("tbMore", core.Qt__FindChildrenRecursively).Pointer())
+        )
+
+        // 修改控件的样式
+        ui_pushbutton.SetStyleSheet(`border:none;
+                background-color: #16da6c;
+                border-radius: 30px;
+                color: #FFFFFF;
+                font-size: 25px;`)
+        ui_title.SetStyleSheet(`color: #444444;font-size: 25px;`)
+        ui_subtitle.SetStyleSheet(`color: #9b9999;font-size: 16px;`)
+
+
+        // 这个是ToolButton上节出现的，这里又加了一个构造函数,
+        var tb = NewToolButton3(fangHuZhongXin, "防护中心", "resources/other/icon_fanghuzhongxin.png", 40, 40)
+        tb.Widget().SetStyleSheet(`
+                                        border: 0px;
+                                        border-radius: 0px;
+                                        background-color: #00000000;
+                                        color:rgb(124, 124, 124);
+                                        font-size: 10px;
+                                        `)
+
+        tb = NewToolButton3(wangGouXianPei, "网购先陪", "resources/other/icon_wanggou.png", 40, 40)
+        tb.Widget().SetStyleSheet(`
+                                        border: 0px;
+                                        border-radius: 0px;
+                                        background-color: #00000000;
+                                        color:rgb(124, 124, 124);
+                                        font-size: 10px;
+                                        `)
+        tb = NewToolButton3(fanLeSuo, "反勒索服务", "resources/other/icon_fanlesuo.png", 40, 40)
+        tb.Widget().SetStyleSheet(`
+                                        border: 0px;
+                                        border-radius: 0px;
+                                        background-color: #00000000;
+                                        color:rgb(124, 124, 124);
+                                        font-size: 10px;
+                                        `)
+
+        tb = NewToolButton3(tbApp, "软件管理", "resources/other/icon_app.png", 42, 42)
+        tb.Widget().SetStyleSheet(`
+                                        border: 0px;
+                                        border-radius: 0px;
+                                        background-color: #00000000;
+                                        color:rgb(124, 124, 124);
+                                        font-size: 10px;
+                                        padding-bottom: 10px;
+                                        `)
+        tb = NewToolButton3(tbService, "主页修复", "resources/other/icon_fix.png", 42, 42)
+        tb.Widget().SetStyleSheet(`
+                                        border: 0px;
+                                        border-radius: 0px;
+                                        background-color: #00000000;
+                                        color:rgb(124, 124, 124);
+                                        font-size: 10px;
+                                        padding-bottom: 10px;
+                                        `)
+        tb = NewToolButton3(tbHandler, "手机助手", "resources/other/icon_handler.png", 42, 42)
+        tb.Widget().SetStyleSheet(`
+                                        border: 0px;
+                                        border-radius: 0px;
+                                        background-color: #00000000;
+                                        color:rgb(124, 124, 124);
+                                        font-size: 10px;
+                                        padding-bottom: 10px;
+                                        `)
+        tb = NewToolButton3(tbFix, "更多功能", "resources/other/icon_more.png", 42, 42)
+        tb.Widget().SetStyleSheet(`
+                                        border: 0px;
+                                        border-radius: 0px;
+                                        background-color: #00000000;
+                                        color:rgb(124, 124, 124);
+                                        font-size: 10px;
+                                        padding-bottom: 10px;
+                                        `)
+        tb = NewToolButton3(tbMore, "人工服务", "resources/other/icon_help.png", 42, 42)
+        tb.Widget().SetStyleSheet(`
+                                        border: 0px;
+                                        border-radius: 0px;
+                                        background-color: #00000000;
+                                        color:rgb(124, 124, 124);
+                                        font-size: 10px;
+                                        padding-bottom: 10px;
+                                        `)
+}</span>
+
+// 这玩意，跟之前都是一样的，为了在其它页面调用到QT的控件指针，方便修改属性等
+func (ph *PageHome) Widget () *widgets.QWidget  <span class="cov0" title="0">{
+        return ph.widget
+}</pre>
+
+    <pre class="file" id="file5" style="display: none">package views
+
+import (
+        "github.com/therecipe/qt/core"
+        "github.com/therecipe/qt/uitools"
+        "github.com/therecipe/qt/widgets"
+)
+
+type PageHorse struct {
+        widget *widgets.QWidget
+}
+
+func NewPageHorse () *PageHorse  <span class="cov0" title="0">{
+        ph := new(PageHorse)
+        ph.init()
+        return ph;
+}</span>
+
+func (ph *PageHorse) init ()  <span class="cov0" title="0">{
+        ph.widget = widgets.NewQWidget(nil, 0)
+
+        var loader = uitools.NewQUiLoader(nil)
+        var file = core.NewQFile2("ui/page_horse.ui")
+
+        file.Open(core.QIODevice__ReadOnly)
+        loader.Load(file, ph.widget)
+        file.Close()
+
+        var (
+                ui_pushbutton = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("roundButton", core.Qt__FindChildrenRecursively).Pointer())
+                ui_title = widgets.NewQLabelFromPointer(ph.widget.FindChild("title", core.Qt__FindChildrenRecursively).Pointer())
+                ui_subtitle  = widgets.NewQLabelFromPointer(ph.widget.FindChild("subtitle", core.Qt__FindChildrenRecursively).Pointer())
+
+                ui_pushButton_2  = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("pushButton_2", core.Qt__FindChildrenRecursively).Pointer())
+                ui_pushButton_3  = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("pushButton_3", core.Qt__FindChildrenRecursively).Pointer())
+                ui_pushButton_4  = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("pushButton_4", core.Qt__FindChildrenRecursively).Pointer())
+                ui_pushButton_5  = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("pushButton_5", core.Qt__FindChildrenRecursively).Pointer())
+                ui_pushButton_6  = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("pushButton_6", core.Qt__FindChildrenRecursively).Pointer())
+
+                tbQuanpan  = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("tbQuanpan", core.Qt__FindChildrenRecursively).Pointer())
+                tbAnweizhi  = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("tbAnweizhi", core.Qt__FindChildrenRecursively).Pointer())
+                tbXinrenqu  = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("tbXinrenqu", core.Qt__FindChildrenRecursively).Pointer())
+                tbHuifuqu  = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("tbHuifuqu", core.Qt__FindChildrenRecursively).Pointer())
+                tbShangbanqu  = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("tbShangbanqu", core.Qt__FindChildrenRecursively).Pointer())
+                tbXitong  = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("tbXitong", core.Qt__FindChildrenRecursively).Pointer())
+                tbShouji  = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("tbShouji", core.Qt__FindChildrenRecursively).Pointer())
+                tbWinPE  = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("tbWinPE", core.Qt__FindChildrenRecursively).Pointer())
+        )
+
+        ui_pushbutton.SetStyleSheet(`border:none;
+                background-color: #16da6c;
+                border-radius: 30px;
+                color: #FFFFFF;
+                font-size: 25px;`)
+        ui_title.SetStyleSheet(`color: #444444;font-size: 25px;`)
+        ui_subtitle.SetStyleSheet(`color: #9b9999;font-size: 16px;`)
+        ui_pushButton_2.SetStyleSheet("border-image: url(resources/horse/icon_pb_bg_1.png)")
+        ui_pushButton_3.SetStyleSheet("border-image: url(resources/horse/icon_pb_bg_2.png)")
+        ui_pushButton_4.SetStyleSheet("border-image: url(resources/horse/icon_pb_bg_3.png)")
+        ui_pushButton_5.SetStyleSheet("border-image: url(resources/horse/icon_pb_bg_4.png)")
+        ui_pushButton_6.SetStyleSheet("border-image: url(resources/horse/icon_pb_bg_5.png)")
+
+        var tb = NewToolButton3(tbQuanpan, "全盘查杀", "resources/horse/icon_quanpansaomiao.png", 34, 32)
+        tb.Widget().SetStyleSheet(`
+                                        border: 0px;
+                                        border-radius: 0px;
+                                        background-color: #00000000;
+                                        color:rgb(124, 124, 124);
+                                        `)
+        tb = NewToolButton3(tbAnweizhi, "按位置查杀", "resources/horse/icon_anweizhi.png", 34, 32)
+        tb.Widget().SetStyleSheet(`
+                                        border: 0px;
+                                        border-radius: 0px;
+                                        background-color: #00000000;
+                                        color:rgb(124, 124, 124);
+                                        `)
+        //
+        tb = NewToolButton3(tbXinrenqu, "信任区", "resources/horse/icon_xinrenqu.png", 32, 32)
+        tb.Widget().SetStyleSheet(`
+                                        border: 0px;
+                                        border-radius: 0px;
+                                        background-color: #00000000;
+                                        color:rgb(124, 124, 124);
+                                        `)
+        tb = NewToolButton3(tbHuifuqu, "恢复区", "resources/horse/icon_huifuqu.png", 32, 32)
+        tb.Widget().SetStyleSheet(`
+                                        border: 0px;
+                                        border-radius: 0px;
+                                        background-color: #FF0000;
+                                        color:rgb(124, 124, 124);
+                                        `)
+        tb = NewToolButton3(tbShangbanqu, "上报区", "resources/horse/icon_shangbaoqu.png", 32, 32)
+        tb.Widget().SetStyleSheet(`
+                                        border: 0px;
+                                        border-radius: 0px;
+                                        background-color: #00000000;
+                                        color:rgb(124, 124, 124);
+                                        `)
+        tb = NewToolButton3(tbXitong, "系统急救箱", "resources/horse/icon_icon_1.png", 32, 32)
+        tb.Widget().SetStyleSheet(`
+                                        border: 0px;
+                                        border-radius: 0px;
+                                        background-color: #00000000;
+                                        color:rgb(124, 124, 124);
+                                        `)
+        tb = NewToolButton3(tbShouji, "手机急救箱", "resources/horse/icon_icon_2.png", 32, 32)
+        tb.Widget().SetStyleSheet(`
+                                        border: 0px;
+                                        border-radius: 0px;
+                                        background-color: #00000000;
+                                        color:rgb(124, 124, 124);
+                                        `)
+
+        tb = NewToolButton3(tbWinPE, "WinPE版", "resources/horse/icon_icon_3.png", 32, 32)
+        tb.Widget().SetStyleSheet(`
+                                        border: 0px;
+                                        border-radius: 0px;
+                                        background-color: #00000000;
+                                        color:rgb(124, 124, 124);
+                                        `)
+}</span>
+
+
+func (ph *PageHorse) Widget () *widgets.QWidget  <span class="cov0" title="0">{
+        return ph.widget
+}</span>
+</pre>
+
+    <pre class="file" id="file6" style="display: none">package views
+
+import (
+        "github.com/therecipe/qt/core"
+        "github.com/therecipe/qt/uitools"
+        "github.com/therecipe/qt/widgets"
+)
+
+type PageOptimize struct {
+        widget *widgets.QWidget
+}
+
+func NewPageOptimize () *PageOptimize  <span class="cov0" title="0">{
+        ph := new(PageOptimize)
+        ph.init()
+        return ph;
+}</span>
+
+// 从UI中加载widget
+func (ph *PageOptimize) init ()  <span class="cov0" title="0">{
+        ph.widget = widgets.NewQWidget(nil, 0)
+
+        var loader = uitools.NewQUiLoader(nil)
+        var file = core.NewQFile2("ui/page_optimize.ui")
+
+        file.Open(core.QIODevice__ReadOnly)
+        loader.Load(file, ph.widget)
+        file.Close()
+
+        var (
+                ui_pushbutton = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("roundButton", core.Qt__FindChildrenRecursively).Pointer())
+                ui_title = widgets.NewQLabelFromPointer(ph.widget.FindChild("title", core.Qt__FindChildrenRecursively).Pointer())
+                ui_subtitle  = widgets.NewQLabelFromPointer(ph.widget.FindChild("subtitle", core.Qt__FindChildrenRecursively).Pointer())
+                )
+
+        ui_pushbutton.SetStyleSheet(`border:none;
+                background-color: #16da6c;
+                border-radius: 30px;
+                color: #FFFFFF;
+                font-size: 25px;`)
+        ui_title.SetStyleSheet(`color: #444444;font-size: 25px;`)
+        ui_subtitle.SetStyleSheet(`color: #9b9999;font-size: 16px;`)
+}</span>
+
+
+func (ph *PageOptimize) Widget () *widgets.QWidget  <span class="cov0" title="0">{
+        return ph.widget
+}</span>
+</pre>
+
+    <pre class="file" id="file7" style="display: none">/**
+ * Copyright (C), 2015-2019, 简笔画工作室
+ * FileName: ToolButton.go
+ * Author: 简笔画
+ * Date: 2019.03.28 22:20
+ * Description: 360安全卫士的工具按钮
+ * History:
+ * &lt;author&gt; &lt;time&gt; &lt;version&gt; &lt;desc&gt;
+ * 作者姓名 修改时间 版本号 描述
+ */
+package views
+
+import (
+        "github.com/therecipe/qt/core"
+        "github.com/therecipe/qt/gui"
+        "github.com/therecipe/qt/widgets"
+)
+
+type ToolButton struct {
+        // 父控件，用于显示ToolButton
+        parent *widgets.QWidget
+
+        // 显示文字
+        Text string
+        // 显示图片
+        Icon string
+        // 图片的宽高
+        Icon_width int
+        // 图片的高度
+        Icon_height int
+
+        // QToolButton控件
+        widget *widgets.QToolButton
+
+        // 一个用户标志位，区分是那个QToolButton被点击
+        UserObject int
+}
+
+// 默认的款到单元
+const WIDTH_UNIT = 50
+
+// 析构函数，创建一个ToolButton
+func NewToolButton(parent *widgets.QWidget, text, icon string, width, height int) *ToolButton <span class="cov0"
+                                                                                                    title="0">{
+        var tb = ToolButton{parent, text, icon, width, height, nil, -1}
+        tb.init()
+        return &amp;tb
+}</span>
+
+// 析构函数，创建一个ToolButton
+func NewToolButton2(parent *widgets.QWidget, text, icon string) *ToolButton <span class="cov0" title="0">{
+        var tb = ToolButton{parent, text, icon, WIDTH_UNIT, WIDTH_UNIT, nil, -1}
+        tb.init()
+        return &amp;tb
+}</span>
+
+// 析构函数，创建一个ToolButton
+func NewToolButton3(widget *widgets.QToolButton, text, icon string, w, h int) *ToolButton <span class="cov0" title="0">{
+        var tb = ToolButton{nil, text, icon, w, w, nil, -1}
+        tb.widget = widget
+        tb.init()
+        return &amp;tb
+}</span>
+
+// init
+// 初始化变量函数
+func (tb *ToolButton) init() <span class="cov0" title="0">{
+        tb.showWidget()
+}</span>
+
+// showWidget
+// 显示ToolButton
+func (tb *ToolButton) showWidget() <span class="cov0" title="0">{
+        if tb.widget == nil </span><span class="cov0" title="0">{
+                tb.widget = widgets.NewQToolButton(tb.parent)
+        }</span>
+        <span class="cov0" title="0">action := widgets.NewQAction(nil)
+        action.SetIconText(tb.Text)
+        action.SetIcon(gui.NewQIcon5(tb.Icon))
+        //action.SetIconText()
+        //
+        tb.widget.SetAutoRaise(false);
+        tb.widget.SetDefaultAction(action)
+        tb.widget.SetIconSize(core.NewQSize2(tb.Icon_width, tb.Icon_height))
+        tb.widget.SetToolButtonStyle(core.Qt__ToolButtonTextUnderIcon)</span>
+}
+
+// Widget
+// 返回QToolButton对象。
+func (tb *ToolButton) Widget() *widgets.QToolButton <span class="cov0" title="0">{
+        return tb.widget
+}</span>
+
+// ConnectClicked
+// 当点击时调用。
+func (tb *ToolButton) ConnectClicked(fClicked func(tbutton *ToolButton)) <span class="cov0" title="0">{
+        tb.widget.ConnectClicked(func(checked bool) </span><span class="cov0" title="0">{
+                // 被点击时返回
+                fClicked(tb)
+        }</span>)
+}
+
+// SetUserObject
+// 设置一个用户变量
+func (tb *ToolButton) SetUserObject(flag int) <span class="cov0" title="0">{
+        tb.UserObject = flag
+}</span>
+
+// SetChecked
+// 设置是否被选中，选中则为高亮状态。
+//
+// 解释一下：
+// 本来是不需要这样去修改stylesheet的。
+// 直接在qss里面加入: （意思是：page_selected属性为真是，使用该样式，否则使用默认样式 ）
+// *[page_selected="true"] { /* italicize selected tabs */
+//    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+//    stop:0 rgba(0, 0, 0, 0),
+//    stop:1 rgba(0, 0, 0, 32));
+// }
+// 而代码中只需要:
+//         tb.widget.SetProperty("page_selected", core.NewQVariant11(true))
+// 或者:
+// tb.widget.SetProperty("page_selected", core.NewQVariant11(true))
+// 但是似乎无法运行，不知道哪里不对。呵呵，只能先这样了.
+func (tb *ToolButton) SetChecked(checked bool) <span class="cov0" title="0">{
+        tb.widget.SetProperty("page_selected", core.NewQVariant11(true))
+        if !checked </span><span class="cov0" title="0">{
+                // 这个是默认背景色，
+                tb.widget.SetStyleSheet(`border: 0px;
+                        border-radius: 0px;
+                        background-color: #00000000;
+                        color:rgb(255, 255, 255);
+                        padding-top: 5px;
+                        padding-bottom: 20px;`)
+        }</span> else<span class="cov0" title="0"> {
+                // 这个是一个渐变色的背景，点击时的效果。
+                // 具体怎么用，自行百度吧
+                // 解释下:
+                // x1:0, y1:0, x2:0, y2:1 代表纵向绘图
+                // stop:0 rgba(0, 0, 0, 0)  从透明色
+                // stop:1 rgba(0, 0, 0, 32) 到0.32半透明色
+                tb.widget.SetStyleSheet(`background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                        stop:0 rgba(0, 0, 0, 0),
+                        stop:1 rgba(0, 0, 0, 32));`)
+        }</span>
+}
+</pre>
+
+    <pre class="file" id="file8" style="display: none">/**
+ * Copyright (C), 2015-2019, 简笔画工作室
+ * FileName: MainWindow.go
+ * Author: 简笔画
+ * Date: 2019.03.27 12:32
+ * Description: 波浪球。
+ * History:
+ * &lt;author&gt; &lt;time&gt; &lt;version&gt; &lt;desc&gt;
+ * 作者姓名 修改时间 版本号 描述
+ */
+package views
+
+import "github.com/therecipe/qt/widgets"
+
+type WaveBallWidget struct {
+        widget *widgets.QWidget
+}
+
+//
+func NewWaveBallWidget() *WaveBallWidget <span class="cov0" title="0">{
+        var b = WaveBallWidget{}
+        b.init()
+        return &amp;b
+}</span>
+
+//
+func NewWaveBallWidget2(x, y, w, h int) *WaveBallWidget <span class="cov0" title="0">{
+        var b = WaveBallWidget{}
+        b.init()
+        return &amp;b
+}</span>
+
+// init  WaveBallWidget init variables
+// 初始化变量。
+func (b *WaveBallWidget) init() {<span class="cov0" title="0">
+}</span>
+
+// Widget return WaveBallWidget widget
+// 返回波浪球控件.
+func (b *WaveBallWidget) Widget() *widgets.QWidget <span class="cov0" title="0">{
+        return b.widget
+}</span>
+
+func (b *WaveBallWidget) Show() {<span class="cov0" title="0">
+}</span>
+</pre>
+
+    <pre class="file" id="file9" style="display: none">package views
+
+import (
+        "github.com/therecipe/qt/core"
+        "github.com/therecipe/qt/gui"
+        "github.com/therecipe/qt/widgets"
+)
+
+/**
+ * Copyright (C), 2015-2019, 简笔画工作室
+ * FileName: WidgetLog.go
+ * Author: 简笔画
+ * Date: 2019.03.28 22:20
+ * Description: 盖章的Widget呀
+ * History:
+ * &lt;author&gt; &lt;time&gt; &lt;version&gt; &lt;desc&gt;
+ * 作者姓名 修改时间 版本号 描述
+ */
+type WidgetLog struct {
+        // 父类控件
+        parent *widgets.QWidget
+        // 显示的控件
+        widget *widgets.QWidget
+}
+
+// NewWidgetLog
+// 一样的自定义析构函数
+func NewWidgetLog(p *widgets.QWidget) *WidgetLog <span class="cov0" title="0">{
+        wl := WidgetLog{p, nil}
+        wl.init()
+        return &amp;wl
+}</span>
+
+// init
+// 一样的初始化函数。
+func (wl *WidgetLog) init() <span class="cov0" title="0">{
+        wl.showWidgets()
+}</span>
+
+// showWidgets
+// 显示控件
+// 为啥我要把这块定义成一个Widget，而不是一个一个创建并显示呢，
+// 因为我要给他添加鼠标事件，用于弹出登陆对话框
+func (wl *WidgetLog) showWidgets() <span class="cov0" title="0">{
+        //
+        wl.widget = widgets.NewQWidget(wl.parent, core.Qt__Widget)
+        // 添加偶的章子
+        nameLabel := widgets.NewQLabel2("简笔画", wl.widget, core.Qt__Widget)
+        // 第三个参数是加粗用的，第四个斜体.
+        nameLabel.SetFont(gui.NewQFont2("宋体", 30, 100, false))
+        nameLabel.SetGeometry2(10, 0, 100, 30)
+        nameLabel.SetObjectName("WidgetLog_Label")
+        nameLabel.SetAlignment(core.Qt__AlignHCenter)
+        // 添加登陆360账号
+        loginLabel := widgets.NewQLabel2("登陆360账号", wl.widget, core.Qt__Widget)
+        // 第三个参数是加粗用的，第四个斜体.
+        loginLabel.SetFont(gui.NewQFont2("微软雅黑", 12, 100, false))
+        loginLabel.SetGeometry2(10, 30, 100, 30)
+        loginLabel.SetObjectName("WidgetLog_Label")
+        // 水平居中
+        loginLabel.SetAlignment(core.Qt__AlignHCenter)
+        // 添加360图标
+        iconWidget := widgets.NewQWidget(wl.widget, core.Qt__Widget)
+        iconWidget.SetGeometry2(110, 0, 60, 60)
+        iconWidget.SetStyleSheet("border-image: url(resources/icon_w.png)")
+}</span>
+
+//
+func (wl *WidgetLog) Widget() *widgets.QWidget <span class="cov0" title="0">{
+        return wl.widget
+}</span>
+</pre>
+
+</div>
+</body>
+<script>
+    (function () {
+        var files = document.getElementById('files');
+        var visible;
+        files.addEventListener('change', onChange, false);
+
+        function select(part) {
+            if (visible)
+                visible.style.display = 'none';
+            visible = document.getElementById(part);
+            if (!visible)
+                return;
+            files.value = part;
+            visible.style.display = 'block';
+            location.hash = part;
+        }
+
+        function onChange() {
+            select(files.value);
+            window.scrollTo(0, 0);
+        }
+
+        if (location.hash != "") {
+            select(location.hash.substr(1));
+        }
+        if (!visible) {
+            select("file0");
+        }
+    })();
+</script>
+</html>

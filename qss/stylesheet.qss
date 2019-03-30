@@ -45,7 +45,7 @@ QToolButton { /* italicize selected tabs */
     padding-bottom: 20px;
 }
 
-/* 这个似乎无效 */
+/* background-color似乎无效 */
 *[page_selected="true"] { /* italicize selected tabs */
     background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
     stop:0 rgba(0, 0, 0, 0),
@@ -57,4 +57,23 @@ QToolButton { /* italicize selected tabs */
     background-color: #00000000;
     color:rgb(255, 255, 255);
     text-align: center;
+}
+
+/******************************************/
+#roundButton {
+    border:none;
+    background-color: #16da6c;
+    border-radius: 30px;
+    color: #FFFFFF;
+    font-size: 25px;
+}
+
+#title {
+    color: #9b9999;
+    font-size: 16px;
+}
+
+#subtitle {
+    color: #9b9999;
+    font-size: 16px;
 }

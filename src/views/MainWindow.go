@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C), 2015-2019, 简笔画工作室
  * FileName: MainWindow.go
  * Author: 简笔画
@@ -8,6 +8,8 @@
  * <author> <time> <version> <desc>
  * 作者姓名 修改时间 版本号 描述
  */
+
+// Package views is all user define view struct, Contains one or more QWidgets pointer
 package views
 
 import (
@@ -19,9 +21,13 @@ import (
 	"os"
 )
 
+// WIDTH is window max and min width
 const WIDTH = 920
+
+// HEIGHT is window max and min height
 const HEIGHT = 580
 
+// PAGE_COUNT is max page count
 const PAGE_COUNT = 8
 
 // MainWindow is a main window
@@ -265,6 +271,9 @@ func (mw *MainWindow) onToolButtonDidClicked(button *ToolButton) {
 		for i := 0; i < PAGE_COUNT-2; i++ {
 			toolButtons[i].SetChecked(i == button.UserObject)
 		}
+
+		// 改变当前Page
+		mw.stackWidget.SetCurrentIndex(button.UserObject)
 	}
 }
 
@@ -275,4 +284,34 @@ func (mw *MainWindow) showStackedWidget() {
 	mw.stackWidget.SetGeometry2(0, 120, WIDTH, HEIGHT-120)
 	mw.stackWidget.SetCurrentIndex(0)
 	mw.stackWidget.SetStyleSheet("background: #FFFFFF")
+
+	// 接口的初次应用
+	var widgetInterface WidgetInterface
+
+	// 将PageHome，断言转换为接口
+	// 因为go没有继承接口的概念，所以这里实现使用转换来处理的
+	widgetInterface = NewPageHome()
+	//创建Page,并显示。
+	mw.stackWidget.AddWidget(widgetInterface.Widget())
+
+	// 将HorseHome，断言转换为接口
+	// 因为go没有继承接口的概念，所以这里实现使用转换来处理的
+	widgetInterface = NewPageHorse()
+	//创建Page,并显示。
+	mw.stackWidget.AddWidget(widgetInterface.Widget())
+
+	widgetInterface = NewPageClear()
+	mw.stackWidget.AddWidget(widgetInterface.Widget())
+
+	widgetInterface = NewPageFix()
+	//创建Page,并显示。
+	mw.stackWidget.AddWidget(widgetInterface.Widget())
+
+	widgetInterface = NewPageOptimize()
+	//创建Page,并显示。
+	mw.stackWidget.AddWidget(widgetInterface.Widget())
+
+	widgetInterface = NewPageActions()
+	//创建Page,并显示。
+	mw.stackWidget.AddWidget(widgetInterface.Widget())
 }

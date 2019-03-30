@@ -1,0 +1,75 @@
+MainWindow.go:24:7: exported const WIDTH should have comment or be unexported
+MainWindow.go:25:7: exported const HEIGHT should have comment or be unexported
+MainWindow.go:27:7: don't use ALL_CAPS in Go names; use CamelCase
+MainWindow.go:27:7: exported const PAGE_COUNT should have comment or be unexported
+MainWindow.go:44:1: comment on exported function NewMainWindow should be of the form "NewMainWindow ..."
+MainWindow.go:187:5: don't use underscores in Go names; var toolButtons_icon_name should be toolButtonsIconName
+MainWindow.go:198:5: don't use underscores in Go names; var toolButtons_name should be toolButtonsName
+MainWindow.go:211:2: don't use underscores in Go names; const ToolButtonType_HOME should be ToolButtonTypeHOME
+MainWindow.go:213:2: don't use underscores in Go names; const ToolButtonType_HORSE should be ToolButtonTypeHORSE
+MainWindow.go:215:2: don't use underscores in Go names; const ToolButtonType_CLEAR should be ToolButtonTypeCLEAR
+MainWindow.go:217:2: don't use underscores in Go names; const ToolButtonType_FIX should be ToolButtonTypeFIX
+MainWindow.go:219:2: don't use underscores in Go names; const ToolButtonType_ACTIONS should be ToolButtonTypeACTIONS
+MainWindow.go:221:2: don't use underscores in Go names; const ToolButtonType_YOUHUA should be ToolButtonTypeYOUHUA
+MainWindow.go:223:2: don't use underscores in Go names; const ToolButtonType_MARKET should be ToolButtonTypeMARKET
+MainWindow.go:225:2: don't use underscores in Go names; const ToolButtonType_APP should be ToolButtonTypeAPP
+PageActions.go:9:6: exported type PageActions should have comment or be unexported
+PageActions.go:13:1: exported function NewPageActions should have comment or be unexported
+PageActions.go:50:1: exported method PageActions.Widget should have comment or be unexported
+PageClear.go:9:6: exported type PageClear should have comment or be unexported
+PageClear.go:13:1: exported function NewPageClear should have comment or be unexported
+PageClear.go:31:3: don't use underscores in Go names; var ui_pushbutton should be uiPushbutton
+PageClear.go:32:3: don't use underscores in Go names; var ui_title should be uiTitle
+PageClear.go:33:3: don't use underscores in Go names; var ui_subtitle should be uiSubtitle
+PageClear.go:51:1: exported method PageClear.Widget should have comment or be unexported
+PageFix.go:9:6: exported type PageFix should have comment or be unexported
+PageFix.go:13:1: exported function NewPageFix should have comment or be unexported
+PageFix.go:31:3: don't use underscores in Go names; var ui_pushbutton should be uiPushbutton
+PageFix.go:32:3: don't use underscores in Go names; var ui_title should be uiTitle
+PageFix.go:33:3: don't use underscores in Go names; var ui_subtitle should be uiSubtitle
+PageFix.go:46:1: exported method PageFix.Widget should have comment or be unexported
+PageHome.go:9:1: comment on exported type PageHome should be of the form "PageHome ..." (with optional leading article)
+PageHome.go:14:1: comment on exported function NewPageHome should be of the form "NewPageHome ..."
+PageHome.go:38:3: don't use underscores in Go names; var ui_pushbutton should be uiPushbutton
+PageHome.go:39:3: don't use underscores in Go names; var ui_title should be uiTitle
+PageHome.go:40:3: don't use underscores in Go names; var ui_subtitle should be uiSubtitle
+PageHome.go:137:1: comment on exported method PageHome.Widget should be of the form "Widget ..."
+PageHorse.go:9:6: exported type PageHorse should have comment or be unexported
+PageHorse.go:13:1: exported function NewPageHorse should have comment or be unexported
+PageHorse.go:30:3: don't use underscores in Go names; var ui_pushbutton should be uiPushbutton
+PageHorse.go:31:3: don't use underscores in Go names; var ui_title should be uiTitle
+PageHorse.go:32:3: don't use underscores in Go names; var ui_subtitle should be uiSubtitle
+PageHorse.go:34:3: don't use underscores in Go names; var ui_pushButton_2 should be uiPushButton2
+PageHorse.go:35:3: don't use underscores in Go names; var ui_pushButton_3 should be uiPushButton3
+PageHorse.go:36:3: don't use underscores in Go names; var ui_pushButton_4 should be uiPushButton4
+PageHorse.go:37:3: don't use underscores in Go names; var ui_pushButton_5 should be uiPushButton5
+PageHorse.go:38:3: don't use underscores in Go names; var ui_pushButton_6 should be uiPushButton6
+PageHorse.go:124:1: exported method PageHorse.Widget should have comment or be unexported
+PageOptimize.go:9:6: exported type PageOptimize should have comment or be unexported
+PageOptimize.go:13:1: exported function NewPageOptimize should have comment or be unexported
+PageOptimize.go:31:3: don't use underscores in Go names; var ui_pushbutton should be uiPushbutton
+PageOptimize.go:32:3: don't use underscores in Go names; var ui_title should be uiTitle
+PageOptimize.go:33:3: don't use underscores in Go names; var ui_subtitle should be uiSubtitle
+PageOptimize.go:46:1: exported method PageOptimize.Widget should have comment or be unexported
+ToolButton.go:1:1: package comment should be of the form "Package views ..."
+ToolButton.go:19:6: exported type ToolButton should have comment or be unexported
+ToolButton.go:28:2: don't use underscores in Go names; struct field Icon_width should be IconWidth
+ToolButton.go:30:2: don't use underscores in Go names; struct field Icon_height should be IconHeight
+ToolButton.go:39:1: comment on exported const WIDTH_UNIT should be of the form "WIDTH_UNIT ..."
+ToolButton.go:40:7: don't use ALL_CAPS in Go names; use CamelCase
+ToolButton.go:42:1: comment on exported function NewToolButton should be of the form "NewToolButton ..."
+ToolButton.go:49:1: comment on exported function NewToolButton2 should be of the form "NewToolButton2 ..."
+ToolButton.go:56:1: comment on exported function NewToolButton3 should be of the form "NewToolButton3 ..."
+ToolButton.go:87:1: comment on exported method ToolButton.Widget should be of the form "Widget ..."
+ToolButton.go:93:1: comment on exported method ToolButton.ConnectClicked should be of the form "ConnectClicked ..."
+ToolButton.go:102:1: comment on exported method ToolButton.SetUserObject should be of the form "SetUserObject ..."
+ToolButton.go:108:1: comment on exported method ToolButton.SetChecked should be of the form "SetChecked ..."
+WaveBallWidget.go:1:1: package comment should be of the form "Package views ..."
+WaveBallWidget.go:15:6: exported type WaveBallWidget should have comment or be unexported
+WaveBallWidget.go:19:1: comment on exported function NewWaveBallWidget should be of the form "NewWaveBallWidget ..."
+WaveBallWidget.go:26:1: comment on exported function NewWaveBallWidget2 should be of the form "NewWaveBallWidget2 ..."
+WaveBallWidget.go:44:1: exported method WaveBallWidget.Show should have comment or be unexported
+WidgetInterface.go:5:6: exported type WidgetInterface should have comment or be unexported
+WidgetLog.go:9:1: comment on exported type WidgetLog should be of the form "WidgetLog ..." (with optional leading article)
+WidgetLog.go:26:1: comment on exported function NewWidgetLog should be of the form "NewWidgetLog ..."
+WidgetLog.go:68:1: comment on exported method WidgetLog.Widget should be of the form "Widget ..."
