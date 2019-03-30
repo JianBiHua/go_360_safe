@@ -1,13 +1,4 @@
-/**
- * Copyright (C), 2015-2019, 简笔画工作室
- * FileName: ToolButton.go
- * Author: 简笔画
- * Date: 2019.03.28 22:20
- * Description: 360安全卫士的工具按钮
- * History:
- * <author> <time> <version> <desc>
- * 作者姓名 修改时间 版本号 描述
- */
+// Package views ToolButton
 package views
 
 import (
@@ -16,6 +7,7 @@ import (
 	"github.com/therecipe/qt/widgets"
 )
 
+// ToolButton is tool button object
 type ToolButton struct {
 	// 父控件，用于显示ToolButton
 	parent *widgets.QWidget
@@ -25,9 +17,9 @@ type ToolButton struct {
 	// 显示图片
 	Icon string
 	// 图片的宽高
-	Icon_width int
+	IconWidth int
 	// 图片的高度
-	Icon_height int
+	IconHeight int
 
 	// QToolButton控件
 	widget *widgets.QToolButton
@@ -36,24 +28,40 @@ type ToolButton struct {
 	UserObject int
 }
 
-// 默认的款到单元
-const WIDTH_UNIT = 50
+// WIDTHUNIT 默认的宽高单元
+const WIDTHUNIT = 50
 
+// NewToolButton is 构造函数
 // 析构函数，创建一个ToolButton
+// parent：父窗口指针
+// text: 显示的文字
+// icon: 显示的图片路径
+// width: 图片显示的宽度
+// height: 图片显示的高度
 func NewToolButton(parent *widgets.QWidget, text, icon string, width, height int) *ToolButton {
 	var tb = ToolButton{parent, text, icon, width, height, nil, -1}
 	tb.init()
 	return &tb
 }
 
+// NewToolButton2 is 构造函数
 // 析构函数，创建一个ToolButton
+// parent：父窗口指针
+// text: 显示的文字
+// icon: 显示的图片路径
 func NewToolButton2(parent *widgets.QWidget, text, icon string) *ToolButton {
-	var tb = ToolButton{parent, text, icon, WIDTH_UNIT, WIDTH_UNIT, nil, -1}
+	var tb = ToolButton{parent, text, icon, WIDTHUNIT, WIDTHUNIT, nil, -1}
 	tb.init()
 	return &tb
 }
 
+// NewToolButton3 is 构造函数
 // 析构函数，创建一个ToolButton
+// widget：直接传入一个QToolbutton，不用重新创建
+// text: 显示的文字
+// icon: 显示的图片路径
+// w: 图片显示的宽度
+// h: 图片显示的高度
 func NewToolButton3(widget *widgets.QToolButton, text, icon string, w, h int) *ToolButton {
 	var tb = ToolButton{nil, text, icon, w, w, nil, -1}
 	tb.widget = widget
@@ -80,17 +88,17 @@ func (tb *ToolButton) showWidget() {
 	//
 	tb.widget.SetAutoRaise(false)
 	tb.widget.SetDefaultAction(action)
-	tb.widget.SetIconSize(core.NewQSize2(tb.Icon_width, tb.Icon_height))
+	tb.widget.SetIconSize(core.NewQSize2(tb.IconWidth, tb.IconHeight))
 	tb.widget.SetToolButtonStyle(core.Qt__ToolButtonTextUnderIcon)
 }
 
-// Widget
+// Widget is 返回QToolButton指针
 // 返回QToolButton对象。
 func (tb *ToolButton) Widget() *widgets.QToolButton {
 	return tb.widget
 }
 
-// ConnectClicked
+// ConnectClicked is 设置点击事件
 // 当点击时调用。
 func (tb *ToolButton) ConnectClicked(fClicked func(tbutton *ToolButton)) {
 	tb.widget.ConnectClicked(func(checked bool) {
@@ -99,13 +107,13 @@ func (tb *ToolButton) ConnectClicked(fClicked func(tbutton *ToolButton)) {
 	})
 }
 
-// SetUserObject
+// SetUserObject 设置用户数据
 // 设置一个用户变量
 func (tb *ToolButton) SetUserObject(flag int) {
 	tb.UserObject = flag
 }
 
-// SetChecked
+// SetChecked 设置选中状态
 // 设置是否被选中，选中则为高亮状态。
 //
 // 解释一下：

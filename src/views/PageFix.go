@@ -6,10 +6,12 @@ import (
 	"github.com/therecipe/qt/widgets"
 )
 
+// PageFix is fix pc
 type PageFix struct {
 	widget *widgets.QWidget
 }
 
+// NewPageFix 构造函数
 func NewPageFix() *PageFix {
 	ph := new(PageFix)
 	ph.init()
@@ -28,20 +30,21 @@ func (ph *PageFix) init() {
 	file.Close()
 
 	var (
-		ui_pushbutton = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("roundButton", core.Qt__FindChildrenRecursively).Pointer())
-		ui_title      = widgets.NewQLabelFromPointer(ph.widget.FindChild("title", core.Qt__FindChildrenRecursively).Pointer())
-		ui_subtitle   = widgets.NewQLabelFromPointer(ph.widget.FindChild("subtitle", core.Qt__FindChildrenRecursively).Pointer())
+		uiPushbutton = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("roundButton", core.Qt__FindChildrenRecursively).Pointer())
+		uiTitle      = widgets.NewQLabelFromPointer(ph.widget.FindChild("title", core.Qt__FindChildrenRecursively).Pointer())
+		uiSubtitle   = widgets.NewQLabelFromPointer(ph.widget.FindChild("subtitle", core.Qt__FindChildrenRecursively).Pointer())
 	)
 
-	ui_pushbutton.SetStyleSheet(`border:none;
+	uiPushbutton.SetStyleSheet(`border:none;
 		background-color: #16da6c;
 		border-radius: 30px;
 		color: #FFFFFF;
 		font-size: 25px;`)
-	ui_title.SetStyleSheet(`color: #444444;font-size: 25px;`)
-	ui_subtitle.SetStyleSheet(`color: #9b9999;font-size: 16px;`)
+	uiTitle.SetStyleSheet(`color: #444444;font-size: 25px;`)
+	uiSubtitle.SetStyleSheet(`color: #9b9999;font-size: 16px;`)
 }
 
+// Widget is back a widgets.QWidget pointer
 func (ph *PageFix) Widget() *widgets.QWidget {
 	return ph.widget
 }

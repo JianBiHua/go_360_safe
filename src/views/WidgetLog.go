@@ -1,3 +1,4 @@
+// Package views  WidgetLog
 package views
 
 import (
@@ -6,16 +7,7 @@ import (
 	"github.com/therecipe/qt/widgets"
 )
 
-/**
- * Copyright (C), 2015-2019, 简笔画工作室
- * FileName: WidgetLog.go
- * Author: 简笔画
- * Date: 2019.03.28 22:20
- * Description: 盖章的Widget呀
- * History:
- * <author> <time> <version> <desc>
- * 作者姓名 修改时间 版本号 描述
- */
+// WidgetLog is
 type WidgetLog struct {
 	// 父类控件
 	parent *widgets.QWidget
@@ -23,7 +15,7 @@ type WidgetLog struct {
 	widget *widgets.QWidget
 }
 
-// NewWidgetLog
+// NewWidgetLog is 构造函数
 // 一样的自定义析构函数
 func NewWidgetLog(p *widgets.QWidget) *WidgetLog {
 	wl := WidgetLog{p, nil}
@@ -65,7 +57,7 @@ func (wl *WidgetLog) showWidgets() {
 	iconWidget.SetStyleSheet("border-image: url(resources/icon_w.png)")
 }
 
-//
+// Widget return WaveBallWidget widget
 func (wl *WidgetLog) Widget() *widgets.QWidget {
 	return wl.widget
 }

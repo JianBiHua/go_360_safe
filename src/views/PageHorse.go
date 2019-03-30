@@ -6,10 +6,12 @@ import (
 	"github.com/therecipe/qt/widgets"
 )
 
+// PageHorse is 木马 page
 type PageHorse struct {
 	widget *widgets.QWidget
 }
 
+// NewPageHorse is 木马结构体
 func NewPageHorse() *PageHorse {
 	ph := new(PageHorse)
 	ph.init()
@@ -27,15 +29,15 @@ func (ph *PageHorse) init() {
 	file.Close()
 
 	var (
-		ui_pushbutton = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("roundButton", core.Qt__FindChildrenRecursively).Pointer())
-		ui_title      = widgets.NewQLabelFromPointer(ph.widget.FindChild("title", core.Qt__FindChildrenRecursively).Pointer())
-		ui_subtitle   = widgets.NewQLabelFromPointer(ph.widget.FindChild("subtitle", core.Qt__FindChildrenRecursively).Pointer())
+		uiPushbutton = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("roundButton", core.Qt__FindChildrenRecursively).Pointer())
+		uiTitle      = widgets.NewQLabelFromPointer(ph.widget.FindChild("title", core.Qt__FindChildrenRecursively).Pointer())
+		uiSubtitle   = widgets.NewQLabelFromPointer(ph.widget.FindChild("subtitle", core.Qt__FindChildrenRecursively).Pointer())
 
-		ui_pushButton_2 = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("pushButton_2", core.Qt__FindChildrenRecursively).Pointer())
-		ui_pushButton_3 = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("pushButton_3", core.Qt__FindChildrenRecursively).Pointer())
-		ui_pushButton_4 = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("pushButton_4", core.Qt__FindChildrenRecursively).Pointer())
-		ui_pushButton_5 = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("pushButton_5", core.Qt__FindChildrenRecursively).Pointer())
-		ui_pushButton_6 = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("pushButton_6", core.Qt__FindChildrenRecursively).Pointer())
+		uiPushbutton2 = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("pushButton_2", core.Qt__FindChildrenRecursively).Pointer())
+		uiPushbutton3 = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("pushButton_3", core.Qt__FindChildrenRecursively).Pointer())
+		uiPushbutton4 = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("pushButton_4", core.Qt__FindChildrenRecursively).Pointer())
+		uiPushbutton5 = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("pushButton_5", core.Qt__FindChildrenRecursively).Pointer())
+		uiPushbutton6 = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("pushButton_6", core.Qt__FindChildrenRecursively).Pointer())
 
 		tbQuanpan    = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("tbQuanpan", core.Qt__FindChildrenRecursively).Pointer())
 		tbAnweizhi   = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("tbAnweizhi", core.Qt__FindChildrenRecursively).Pointer())
@@ -47,18 +49,18 @@ func (ph *PageHorse) init() {
 		tbWinPE      = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("tbWinPE", core.Qt__FindChildrenRecursively).Pointer())
 	)
 
-	ui_pushbutton.SetStyleSheet(`border:none;
+	uiPushbutton.SetStyleSheet(`border:none;
 		background-color: #16da6c;
 		border-radius: 30px;
 		color: #FFFFFF;
 		font-size: 25px;`)
-	ui_title.SetStyleSheet(`color: #444444;font-size: 25px;`)
-	ui_subtitle.SetStyleSheet(`color: #9b9999;font-size: 16px;`)
-	ui_pushButton_2.SetStyleSheet("border-image: url(resources/horse/icon_pb_bg_1.png)")
-	ui_pushButton_3.SetStyleSheet("border-image: url(resources/horse/icon_pb_bg_2.png)")
-	ui_pushButton_4.SetStyleSheet("border-image: url(resources/horse/icon_pb_bg_3.png)")
-	ui_pushButton_5.SetStyleSheet("border-image: url(resources/horse/icon_pb_bg_4.png)")
-	ui_pushButton_6.SetStyleSheet("border-image: url(resources/horse/icon_pb_bg_5.png)")
+	uiTitle.SetStyleSheet(`color: #444444;font-size: 25px;`)
+	uiSubtitle.SetStyleSheet(`color: #9b9999;font-size: 16px;`)
+	uiPushbutton2.SetStyleSheet("border-image: url(resources/horse/icon_pb_bg_1.png)")
+	uiPushbutton3.SetStyleSheet("border-image: url(resources/horse/icon_pb_bg_2.png)")
+	uiPushbutton4.SetStyleSheet("border-image: url(resources/horse/icon_pb_bg_3.png)")
+	uiPushbutton5.SetStyleSheet("border-image: url(resources/horse/icon_pb_bg_4.png)")
+	uiPushbutton6.SetStyleSheet("border-image: url(resources/horse/icon_pb_bg_5.png)")
 
 	var tb = NewToolButton3(tbQuanpan, "全盘查杀", "resources/horse/icon_quanpansaomiao.png", 34, 32)
 	tb.Widget().SetStyleSheet(`
@@ -120,6 +122,7 @@ func (ph *PageHorse) init() {
 					`)
 }
 
+// Widget is back a widgets.QWidget pointer
 func (ph *PageHorse) Widget() *widgets.QWidget {
 	return ph.widget
 }

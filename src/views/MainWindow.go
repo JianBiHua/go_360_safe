@@ -17,7 +17,6 @@ import (
 	"github.com/therecipe/qt/core"
 	"github.com/therecipe/qt/gui"
 	"github.com/therecipe/qt/widgets"
-	"io/ioutil"
 	"os"
 )
 
@@ -27,8 +26,8 @@ const WIDTH = 920
 // HEIGHT is window max and min height
 const HEIGHT = 580
 
-// PAGE_COUNT is max page count
-const PAGE_COUNT = 8
+// PAGECOUNT is max page count
+const PAGECOUNT = 8
 
 // MainWindow is a main window
 // 显示主界面。
@@ -45,7 +44,7 @@ type MainWindow struct {
 	windowPos *core.QPoint
 }
 
-// 模拟构造函数
+// NewMainWindow 模拟构造函数
 // 一个全局函数
 func NewMainWindow() *MainWindow {
 	wm := &MainWindow{}
@@ -81,13 +80,13 @@ func (mw *MainWindow) showMainWindow() {
 
 	mw.app = widgets.NewQApplication(len(os.Args), os.Args)
 	// 设置qss，相当于html中的css文件
-	data, err := ioutil.ReadFile("qss/stylesheet.qss")
-	if err != nil {
-		fmt.Println("File reading error", err)
-		return
-	}
-
-	mw.app.SetStyleSheet(string(data))
+	//data, err := ioutil.ReadFile("qss/stylesheet.qss")
+	//if err != nil {
+	//	fmt.Println("File reading error", err)
+	//	return
+	//}
+	//
+	//mw.app.SetStyleSheet(string(data))
 
 	mw.window = widgets.NewQMainWindow(nil, 0)
 	// 设置标题
@@ -188,7 +187,7 @@ func (mw *MainWindow) showTopLayout() {
 var toolButtons [8]*ToolButton
 
 // 图片名称
-var toolButtons_icon_name = [...]string{
+var toolButtonsIconNames = [...]string{
 	"resources/tab/tab_home.png",
 	"resources/tab/tab_horse.png",
 	"resources/tab/tab_clear.png",
@@ -199,7 +198,7 @@ var toolButtons_icon_name = [...]string{
 	"resources/tab/tab_app.png"}
 
 // 名称
-var toolButtons_name = [...]string{
+var toolButtonsNames = [...]string{
 	"电脑体验",
 	"木马查杀",
 	"电脑清理",
@@ -212,21 +211,21 @@ var toolButtons_name = [...]string{
 // 在用用GO的枚举吧，哈哈
 const (
 	// 电脑体验
-	ToolButtonType_HOME = iota
+	ToolButtonTypeHome = iota
 	// 木马扫描
-	ToolButtonType_HORSE
+	ToolButtonTypeHorse
 	// 电脑清除
-	ToolButtonType_CLEAR
+	ToolButtonTypeClear
 	// 系统修复
-	ToolButtonType_FIX
+	ToolButtonTypeFix
 	// 功能大全
-	ToolButtonType_ACTIONS
+	ToolButtonTypeActions
 	// 优化加速
-	ToolButtonType_YOUHUA
+	ToolButtonTypeYouhua
 	// 360商城
-	ToolButtonType_MARKET
+	ToolButtonTypeMarket
 	// 软件管家
-	ToolButtonType_APP
+	ToolButtonTypeApp
 )
 
 // showToolBarsLayout show toolbars layout
@@ -239,10 +238,10 @@ func (mw *MainWindow) showToolBarsLayout() {
 	widget.SetGeometry2(0, 30, WIDTH, 90)
 
 	// 添加8个ToolButton
-	for i := 0; i < PAGE_COUNT; i++ {
+	for i := 0; i < PAGECOUNT; i++ {
 		// 创建ToolButton
-		toolButtons[i] = NewToolButton2(widget, toolButtons_name[i],
-			toolButtons_icon_name[i])
+		toolButtons[i] = NewToolButton2(widget, toolButtonsNames[i],
+			toolButtonsIconNames[i])
 		// 设置显示位置
 		toolButtons[i].Widget().SetGeometry2(20+90*i, 0, 90, 90)
 		// 设置点击状态
@@ -267,8 +266,8 @@ func (mw *MainWindow) onToolButtonDidClicked(button *ToolButton) {
 	// 只有i==UserObject，说明就是那个控件被点击了
 	// 为啥减2呢, 因为360安全卫士就是这么设计的
 	// 后面两个得特殊处理的。
-	if button.UserObject < PAGE_COUNT-2 {
-		for i := 0; i < PAGE_COUNT-2; i++ {
+	if button.UserObject < PAGECOUNT-2 {
+		for i := 0; i < PAGECOUNT-2; i++ {
 			toolButtons[i].SetChecked(i == button.UserObject)
 		}
 

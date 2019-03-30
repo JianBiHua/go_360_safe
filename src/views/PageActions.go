@@ -6,16 +6,19 @@ import (
 	"github.com/therecipe/qt/widgets"
 )
 
+// PageActions is more action's sheet
 type PageActions struct {
 	widget *widgets.QWidget
 }
 
+// NewPageActions is 析构函数
 func NewPageActions() *PageActions {
 	ph := new(PageActions)
 	ph.init()
 	return ph
 }
 
+// init 初始化变量
 // 从UI中加载widget
 func (ph *PageActions) init() {
 	ph.widget = widgets.NewQWidget(nil, 0)
@@ -46,6 +49,7 @@ func (ph *PageActions) init() {
 	ph.widget.SetLayout(layout)
 }
 
+// Widget is back a widgets.QWidget pointer
 func (ph *PageActions) Widget() *widgets.QWidget {
 	return ph.widget
 }

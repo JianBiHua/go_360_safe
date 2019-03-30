@@ -6,11 +6,13 @@ import (
 	"github.com/therecipe/qt/widgets"
 )
 
+// PageHome is home page
 // 这个结构体，暂时只需要一个QWidget，之后肯定会被扩充
 type PageHome struct {
 	widget *widgets.QWidget
 }
 
+// NewPageHome 初始化
 // 这些都跟之前一样的
 func NewPageHome() *PageHome {
 	ph := new(PageHome)
@@ -18,6 +20,7 @@ func NewPageHome() *PageHome {
 	return ph
 }
 
+// init
 // 从UI中加载widget
 // 核心代码
 func (ph *PageHome) init() {
@@ -35,9 +38,9 @@ func (ph *PageHome) init() {
 	var (
 		// 核心代码3： 从ui中获取objectname=roundButton等的控件，
 		// 注意NewQSpinBoxFromPointer，NewQLabelFromPointer对应不一样的控件，
-		ui_pushbutton = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("roundButton", core.Qt__FindChildrenRecursively).Pointer())
-		ui_title      = widgets.NewQLabelFromPointer(ph.widget.FindChild("title", core.Qt__FindChildrenRecursively).Pointer())
-		ui_subtitle   = widgets.NewQLabelFromPointer(ph.widget.FindChild("subtitle", core.Qt__FindChildrenRecursively).Pointer())
+		uiPushbutton = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("roundButton", core.Qt__FindChildrenRecursively).Pointer())
+		uiTitle      = widgets.NewQLabelFromPointer(ph.widget.FindChild("title", core.Qt__FindChildrenRecursively).Pointer())
+		uiSubtitle   = widgets.NewQLabelFromPointer(ph.widget.FindChild("subtitle", core.Qt__FindChildrenRecursively).Pointer())
 
 		fangHuZhongXin = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("fangHuZhongXin", core.Qt__FindChildrenRecursively).Pointer())
 		wangGouXianPei = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("wangGouXianPei", core.Qt__FindChildrenRecursively).Pointer())
@@ -51,13 +54,13 @@ func (ph *PageHome) init() {
 	)
 
 	// 修改控件的样式
-	ui_pushbutton.SetStyleSheet(`border:none;
+	uiPushbutton.SetStyleSheet(`border:none;
 		background-color: #16da6c;
 		border-radius: 30px;
 		color: #FFFFFF;
 		font-size: 25px;`)
-	ui_title.SetStyleSheet(`color: #444444;font-size: 25px;`)
-	ui_subtitle.SetStyleSheet(`color: #9b9999;font-size: 16px;`)
+	uiTitle.SetStyleSheet(`color: #444444;font-size: 25px;`)
+	uiSubtitle.SetStyleSheet(`color: #9b9999;font-size: 16px;`)
 
 	// 这个是ToolButton上节出现的，这里又加了一个构造函数,
 	var tb = NewToolButton3(fangHuZhongXin, "防护中心", "resources/other/icon_fanghuzhongxin.png", 40, 40)
@@ -133,6 +136,7 @@ func (ph *PageHome) init() {
 					`)
 }
 
+// Widget is back a widgets.QWidget pointer
 // 这玩意，跟之前都是一样的，为了在其它页面调用到QT的控件指针，方便修改属性等
 func (ph *PageHome) Widget() *widgets.QWidget {
 	return ph.widget
