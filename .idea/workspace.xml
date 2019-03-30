@@ -1,98 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdd8f000-8dcb-4e36-8e97-51258a0f0e9b" name="Default Changelist" comment="第三节了，界面更好看了">
-      <change afterPath="$PROJECT_DIR$/resources/horse/icon_anweizhi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/horse/icon_clear.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/horse/icon_fix.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/horse/icon_horse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/horse/icon_huifuqu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/horse/icon_icon_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/horse/icon_icon_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/horse/icon_icon_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/horse/icon_optimize.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/horse/icon_pb_bg_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/horse/icon_pb_bg_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/horse/icon_pb_bg_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/horse/icon_pb_bg_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/horse/icon_pb_bg_5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/horse/icon_quanpansaomiao.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/horse/icon_shangbaoqu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/horse/icon_xinrenqu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/market/market_icon_1_b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/market/market_icon_1_g.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/market/market_icon_2_b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/market/market_icon_2_g.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/market/market_icon_3_b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/market/market_icon_3_g.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/market/market_icon_4_b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/market/market_icon_4_g.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/market/market_icon_5_b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/market/market_icon_5_g.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/menu/menu_about.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/menu/menu_change.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/menu/menu_help.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/menu/menu_mian.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/menu/menu_option.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/menu/menu_question.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/menu/menu_upgrade.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/menu/menu_web.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/menu/menu_yinsi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/option/option_cell_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/option/option_top_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/option/option_top_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/option/option_top_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/option/option_top_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/option/option_top_5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/option/option_top_6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/other/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/other/icon_360.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/other/icon_app.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/other/icon_check_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/other/icon_fanghuzhongxin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/other/icon_fanlesuo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/other/icon_fix.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/other/icon_handler.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/other/icon_help.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/other/icon_liulanqi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/other/icon_more.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/other/icon_right.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/other/icon_scan_g.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/other/icon_search_hover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/other/icon_search_normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/other/icon_search_press.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/other/icon_w.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/other/icon_wanggou.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/other/icon_waring.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/question/next_icon2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/question/next_tb_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/question/next_tb_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/question/next_tb_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/question/question.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/question/question_icon1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/question/question_icon2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/question/question_icon3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/PageActions.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/PageClear.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/PageFix.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/PageHome.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/PageHorse.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/PageOptimize.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/WidgetInterface.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/coverage.old.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/page_actions.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/page_clear.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/page_fix.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/page_home.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/page_horse.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/page_optimize.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qss/stylesheet.qss" beforeDir="false" afterPath="$PROJECT_DIR$/qss/stylesheet.qss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/MainWindow.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/MainWindow.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/MainWindow_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/MainWindow_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/ToolButton.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ToolButton.go" afterDir="false" />
-    </list>
+    <list default="true" id="bdd8f000-8dcb-4e36-8e97-51258a0f0e9b" name="Default Changelist" comment="第四节了，更多页面" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,15 +38,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/PageClear.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/PageActions.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="553">
@@ -150,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/src/views/PageHome.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="789">
-              <caret line="76" column="41" selection-start-line="76" selection-start-column="41" selection-end-line="76" selection-end-column="41" />
+              <caret line="75" column="41" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
               <folding>
                 <element signature="e#15#127#0" expanded="true" />
               </folding>
@@ -167,14 +67,26 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/MainWindow.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" selection-start-line="23" selection-end-line="23" selection-end-column="36" />
+            <state relative-caret-position="150">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
               <folding>
                 <element signature="e#232#366#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="75">
+                <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -266,6 +178,7 @@
         <option value="$PROJECT_DIR$/src/views/MainWindow_test.go" />
         <option value="$PROJECT_DIR$/src/views/MainWindow.go" />
         <option value="$PROJECT_DIR$/src/views/MainWindow.go" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -291,23 +204,7 @@
             <path>
               <item name="go_360_safe" type="b2602c69:ProjectViewProjectNode" />
               <item name="qo_360_safe" type="462c0819:PsiDirectoryNode" />
-              <item name="qss" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go_360_safe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qo_360_safe" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go_360_safe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qo_360_safe" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go_360_safe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qo_360_safe" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -406,7 +303,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="45" y="23" width="1407" height="842" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26446888" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -544,7 +440,8 @@
     <MESSAGE value="提交项目" />
     <MESSAGE value="第二节了，" />
     <MESSAGE value="第三节了，界面更好看了" />
-    <option name="LAST_COMMIT_MESSAGE" value="第三节了，界面更好看了" />
+    <MESSAGE value="第四节了，更多页面" />
+    <option name="LAST_COMMIT_MESSAGE" value="第四节了，更多页面" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -596,16 +493,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="18" selection-start-line="18" selection-end-line="70" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="60">
-            <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -662,7 +549,7 @@
     <entry file="file://$PROJECT_DIR$/src/views/PageClear.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
-          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -718,7 +605,7 @@
     <entry file="file://$PROJECT_DIR$/src/views/PageHome.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="789">
-          <caret line="76" column="41" selection-start-line="76" selection-start-column="41" selection-end-line="76" selection-end-column="41" />
+          <caret line="75" column="41" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
           <folding>
             <element signature="e#15#127#0" expanded="true" />
           </folding>
@@ -734,11 +621,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/MainWindow.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" selection-start-line="23" selection-end-line="23" selection-end-column="36" />
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
           <folding>
             <element signature="e#232#366#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="75">
+            <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
