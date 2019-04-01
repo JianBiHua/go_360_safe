@@ -28,13 +28,15 @@ func (ph *PageClear) init() {
 	var file = core.NewQFile2("ui/page_clear.ui")
 
 	file.Open(core.QIODevice__ReadOnly)
-	var formWidget = loader.Load(file, ph.widget)
+	loader.Load(file, ph.widget)
 	file.Close()
 
 	var (
 		uiPushbutton = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("roundButton", core.Qt__FindChildrenRecursively).Pointer())
 		uiTitle      = widgets.NewQLabelFromPointer(ph.widget.FindChild("title", core.Qt__FindChildrenRecursively).Pointer())
 		uiSubtitle   = widgets.NewQLabelFromPointer(ph.widget.FindChild("subtitle", core.Qt__FindChildrenRecursively).Pointer())
+
+		uiIcon = widgets.NewQWidgetFromPointer(ph.widget.FindChild("iconWidget", core.Qt__FindChildrenRecursively).Pointer())
 	)
 
 	uiPushbutton.SetStyleSheet(`border:none;
@@ -45,9 +47,12 @@ func (ph *PageClear) init() {
 	uiTitle.SetStyleSheet(`color: #444444;font-size: 25px;`)
 	uiSubtitle.SetStyleSheet(`color: #9b9999;font-size: 16px;`)
 
-	var layout = widgets.NewQVBoxLayout()
-	layout.AddWidget(formWidget, 0, 0)
-	ph.widget.SetLayout(layout)
+	// 显示波浪图
+	var wbw = NewWaveBallWidget(uiIcon, uiIcon.X(), uiIcon.Y()+120)
+	//// 设置波浪大小
+	wbw.SetProgress(50)
+	wbw.SetGeometry2(0, 0, 190, 190)
+	wbw.SetIcon("resources/horse/icon_clear.png")
 }
 
 // Widget is back a widgets.QWidget pointer

@@ -2,6 +2,7 @@ package views
 
 import (
 	"github.com/therecipe/qt/core"
+	"github.com/therecipe/qt/gui"
 	"github.com/therecipe/qt/uitools"
 	"github.com/therecipe/qt/widgets"
 )
@@ -26,6 +27,9 @@ func NewPageHome() *PageHome {
 func (ph *PageHome) init() {
 	ph.widget = widgets.NewQWidget(nil, 0)
 
+	//var layout = widgets.NewQFormLayout(nil)
+	//ph.widget.SetLayout(layout)
+
 	// 核心代码1: 加载page_home.ui，加载不同的页面，需要修改*.ui
 	var loader = uitools.NewQUiLoader(nil)
 	var file = core.NewQFile2("ui/page_home.ui")
@@ -35,12 +39,18 @@ func (ph *PageHome) init() {
 	loader.Load(file, ph.widget)
 	file.Close()
 
+	//	ph.widget.SetGeometry(formWidget.Geometry())
+	//	fmt.Println("formWidget: ", formWidget.X(), formWidget.Y(), formWidget.Width(), formWidget.Height())
+	//	fmt.Println("ph.widget: ", ph.widget.X(), ph.widget.Y(), ph.widget.Width(), ph.widget.Height())
+
 	var (
 		// 核心代码3： 从ui中获取objectname=roundButton等的控件，
 		// 注意NewQSpinBoxFromPointer，NewQLabelFromPointer对应不一样的控件，
 		uiPushbutton = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("roundButton", core.Qt__FindChildrenRecursively).Pointer())
 		uiTitle      = widgets.NewQLabelFromPointer(ph.widget.FindChild("title", core.Qt__FindChildrenRecursively).Pointer())
 		uiSubtitle   = widgets.NewQLabelFromPointer(ph.widget.FindChild("subtitle", core.Qt__FindChildrenRecursively).Pointer())
+
+		uiIcon = widgets.NewQWidgetFromPointer(ph.widget.FindChild("iconWidget", core.Qt__FindChildrenRecursively).Pointer())
 
 		fangHuZhongXin = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("fangHuZhongXin", core.Qt__FindChildrenRecursively).Pointer())
 		wangGouXianPei = widgets.NewQToolButtonFromPointer(ph.widget.FindChild("wangGouXianPei", core.Qt__FindChildrenRecursively).Pointer())
@@ -134,6 +144,20 @@ func (ph *PageHome) init() {
 					font-size: 10px;
 					padding-bottom: 10px;
 					`)
+
+	// 显示波浪图
+	// 显示波浪图
+	var wbw = NewWaveBallWidget(uiIcon, uiIcon.X(), uiIcon.Y()+120)
+	//// 设置波浪大小
+	wbw.SetProgress(70)
+	wbw.SetGeometry2(0, 0, 190, 190)
+	wbw.ConnectMousePressEvent(func(event *gui.QMouseEvent) {
+		if wbw.BubbleTicker != nil {
+			wbw.StopBubble()
+		} else {
+			wbw.StartBubble()
+		}
+	})
 }
 
 // Widget is back a widgets.QWidget pointer

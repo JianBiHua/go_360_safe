@@ -17,6 +17,8 @@ import (
 	"github.com/therecipe/qt/core"
 	"github.com/therecipe/qt/gui"
 	"github.com/therecipe/qt/widgets"
+	"io/ioutil"
+	"math"
 	"os"
 )
 
@@ -80,13 +82,13 @@ func (mw *MainWindow) showMainWindow() {
 
 	mw.app = widgets.NewQApplication(len(os.Args), os.Args)
 	// 设置qss，相当于html中的css文件
-	//data, err := ioutil.ReadFile("qss/stylesheet.qss")
-	//if err != nil {
-	//	fmt.Println("File reading error", err)
-	//	return
-	//}
-	//
-	//mw.app.SetStyleSheet(string(data))
+	data, err := ioutil.ReadFile("qss/stylesheet.qss")
+	if err != nil {
+		fmt.Println("File reading error", err)
+		return
+	}
+
+	mw.app.SetStyleSheet(string(data))
 
 	mw.window = widgets.NewQMainWindow(nil, 0)
 	// 设置标题
@@ -119,6 +121,38 @@ func (mw *MainWindow) showMainWindow() {
 			mw.windowPos = mw.window.Pos()
 		}
 	})
+
+	//mw.window.ConnectPaintEvent(func(vqp *gui.QPaintEvent) {
+	//	//p := qui.Paint//.Paint(vqp)
+	//	//drawF(vqp, window)
+	//	fmt.Println("remove.ConnectPaintEvent")
+	//
+	//	// go func (){
+	//	// 	var paint = gui.NewQPainter()
+	//
+	//	// }
+	//	//var paint1 = gui.NewQPainter(window.device)
+	//
+	//	//gui.QPainter(remove.GetP)
+	//	// var device = gui.NewQBackingStore(window.Render().PaintDevice())
+	//	// var painter = gui.NewQPainter2(window.devi)
+	//	// defer painter.DestroyQPainter()
+	//	var hourColor = gui.NewQColor3(127, 0, 127, 255)   //opaque 255  ...transparent 0
+	//	var minuteColor = gui.NewQColor3(0, 127, 127, 191) //a bit of transparency
+	//	var device = mw.window.BackingStore().PaintDevice()   //window.Painters[0]
+	//	//.PaintEngineDefault().Painter() //gui.NewQPainter2()
+	//	//painter.setS
+	//	var painter = gui.NewQPainter2(device)
+	//	//painter.Begin()
+	//	painter.SetRenderHint(gui.QPainter__Antialiasing, true)
+	//	painter.SetPen2(minuteColor)
+	//	//		painter.SetPen3(core.Qt__SolidLine)
+	//	painter.SetBrush(gui.NewQBrush3(hourColor, core.Qt__SolidPattern))
+	//	painter.DrawLine3(0, 0, 100, 100)
+	//	painter.FillRect2(10, 10, 100, 100, gui.NewQBrush3(hourColor, 10))
+	//	painter.DrawEllipse3(100, 100, 100, 100)
+	//	painter.End()
+	//})
 
 }
 
@@ -276,6 +310,49 @@ func (mw *MainWindow) onToolButtonDidClicked(button *ToolButton) {
 	}
 }
 
+// 获取画笔颜色
+func getColor(progress int) *gui.QColor {
+	if progress < 30 {
+		return gui.NewQColor3(0xff, 0x84, 0x38, 0xFF)
+	} else if progress < 60 {
+		return gui.NewQColor3(255, 127, 127, 255)
+	} else {
+		return gui.NewQColor3(0x31, 0xef, 0x1a, 0xFF)
+	}
+}
+
+// 获取渐变色
+func getLGColor(isHalf bool, widget *widgets.QWidget, progress int) *gui.QLinearGradient {
+	var linear = gui.NewQLinearGradient3(float64(widget.Width()/2), float64(widget.Height()), float64(widget.Height()/2), 0)
+	var alpha = 0xff
+	if isHalf {
+		alpha = 0x7f
+	}
+	if progress < 30 {
+		linear.SetColorAt(0, gui.NewQColor3(0xFF, 0x9e, 0x7c, alpha))
+		linear.SetColorAt(0.3, gui.NewQColor3(0xFF, 0x73, 0x56, alpha))
+		linear.SetColorAt(1, gui.NewQColor3(0xFF, 0x68, 0x4e, alpha))
+	} else if progress < 60 {
+		linear.SetColorAt(0, gui.NewQColor3(0xFF, 0xc1, 0x73, alpha))
+		linear.SetColorAt(0.2, gui.NewQColor3(0xFF, 0xae, 0x5c, alpha))
+		linear.SetColorAt(0.8, gui.NewQColor3(0xFF, 0x8a, 0x40, alpha))
+		linear.SetColorAt(1, gui.NewQColor3(0xF8, 0x93, 0x4A, alpha))
+	} else {
+		linear.SetColorAt(0, gui.NewQColor3(0x7c, 0xfb, 0x7c, alpha))
+		linear.SetColorAt(0.2, gui.NewQColor3(0x53, 0xe9, 0x6e, alpha))
+		linear.SetColorAt(0.8, gui.NewQColor3(0x35, 0xe3, 0x85, alpha))
+		linear.SetColorAt(1, gui.NewQColor3(0x72, 0xec, 0xa7, alpha))
+	}
+
+	return linear
+}
+
+func getPoint(w float64, widget *widgets.QWidget, angle float64) *core.QPointF {
+	var x = float64(widget.Width()/2) + w*math.Cos((360.0-angle)*3.14/180.0)
+	var y = float64(widget.Height()/2) + w*math.Sin((360.0-angle)*3.14/180.0)
+	return core.NewQPointF3(x, y)
+}
+
 // showStackedWidget
 // 显示stackedWidget
 func (mw *MainWindow) showStackedWidget() {
@@ -283,6 +360,10 @@ func (mw *MainWindow) showStackedWidget() {
 	mw.stackWidget.SetGeometry2(0, 120, WIDTH, HEIGHT-120)
 	mw.stackWidget.SetCurrentIndex(0)
 	mw.stackWidget.SetStyleSheet("background: #FFFFFF")
+
+	//var widget = widgets.NewQWidget(mw.stackWidget, 0)
+	//widget.SetGeometry2(0, 120, HEIGHT-120, HEIGHT-120)
+	//mw.stackWidget.AddWidget(widget)
 
 	// 接口的初次应用
 	var widgetInterface WidgetInterface

@@ -58,7 +58,7 @@
                     <string>全面提速</string>
                 </property>
             </widget>
-            <widget class="WaveBallWidget" name="iconWidget" native="true">
+            <widget class="QWidget" name="iconWidget" native="true">
                 <property name="geometry">
                     <rect>
                         <x>110</x>
@@ -161,14 +161,6 @@
             </widget>
         </widget>
     </widget>
-    <customwidgets>
-        <customwidget>
-            <class>WaveBallWidget</class>
-            <extends>QWidget</extends>
-            <header location="global">customviews/waveballwidget.h</header>
-            <container>1</container>
-        </customwidget>
-    </customwidgets>
     <resources/>
     <connections/>
 </ui>

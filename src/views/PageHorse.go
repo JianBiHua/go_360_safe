@@ -33,6 +33,8 @@ func (ph *PageHorse) init() {
 		uiTitle      = widgets.NewQLabelFromPointer(ph.widget.FindChild("title", core.Qt__FindChildrenRecursively).Pointer())
 		uiSubtitle   = widgets.NewQLabelFromPointer(ph.widget.FindChild("subtitle", core.Qt__FindChildrenRecursively).Pointer())
 
+		uiIcon = widgets.NewQWidgetFromPointer(ph.widget.FindChild("iconWidget", core.Qt__FindChildrenRecursively).Pointer())
+
 		uiPushbutton2 = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("pushButton_2", core.Qt__FindChildrenRecursively).Pointer())
 		uiPushbutton3 = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("pushButton_3", core.Qt__FindChildrenRecursively).Pointer())
 		uiPushbutton4 = widgets.NewQPushButtonFromPointer(ph.widget.FindChild("pushButton_4", core.Qt__FindChildrenRecursively).Pointer())
@@ -120,6 +122,14 @@ func (ph *PageHorse) init() {
 					background-color: #00000000;
 					color:rgb(124, 124, 124);
 					`)
+
+	// 显示波浪图
+	// 显示波浪图
+	var wbw = NewWaveBallWidget(uiIcon, uiIcon.X(), uiIcon.Y()+120)
+	//// 设置波浪大小
+	wbw.SetProgress(50)
+	wbw.SetGeometry2(0, 0, 190, 190)
+	wbw.SetIcon("resources/horse/icon_horse.png")
 }
 
 // Widget is back a widgets.QWidget pointer

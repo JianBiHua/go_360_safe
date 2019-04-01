@@ -57,7 +57,7 @@ func (wl *WidgetLog) showWidgets() {
 	iconWidget.SetStyleSheet("border-image: url(resources/icon_w.png)")
 }
 
-// Widget return WaveBallWidget widget
+// Widget return widget
 func (wl *WidgetLog) Widget() *widgets.QWidget {
 	return wl.widget
 }
