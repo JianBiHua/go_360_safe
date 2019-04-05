@@ -55,6 +55,7 @@ func (wl *WidgetLog) showWidgets() {
 	iconWidget := widgets.NewQWidget(wl.widget, core.Qt__Widget)
 	iconWidget.SetGeometry2(110, 0, 60, 60)
 	iconWidget.SetStyleSheet("border-image: url(resources/icon_w.png)")
+
 }
 
 // Widget return widget

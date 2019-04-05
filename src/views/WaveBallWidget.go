@@ -395,7 +395,6 @@ func (b *WaveBallWidget) drawText() {
 	b.painter.SetFont(textFont)
 
 	//
-
 	var fh = float64(b.progress) / 100.0
 	var max = int(float64(b.Height()) * fh)
 	var top = float64(b.Height())*float64(1-fh) + float64((max-20)/2)

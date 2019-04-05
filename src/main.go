@@ -13,10 +13,14 @@ package main
 import (
 	"GoWorkspace/qo_360_safe/src/views"
 	"fmt"
+	"strconv"
 )
 
 // 入口
 func main() {
+
+	fmt.Println(strconv.FormatFloat(100.0, 'f', -1, 64))
+
 	// 打印一个开始消息
 	fmt.Println("start Go360Safe")
 	// 创建mainwindow

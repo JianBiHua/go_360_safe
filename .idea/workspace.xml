@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdd8f000-8dcb-4e36-8e97-51258a0f0e9b" name="Default Changelist" comment="第五节了，修改注释">
+    <list default="true" id="bdd8f000-8dcb-4e36-8e97-51258a0f0e9b" name="Default Changelist" comment="第六节了，漂亮的波浪球">
+      <change afterPath="$PROJECT_DIR$/src/views/PopupWidget.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/MainWindow.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/MainWindow.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/PageClear.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/PageClear.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/PageFix.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/PageFix.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/PageHome.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/PageHome.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/PageHorse.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/PageHorse.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/PageOptimize.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/PageOptimize.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/WaveBallWidget.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/WaveBallWidget.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/WidgetLog.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/WidgetLog.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/page_optimize.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/page_optimize.ui" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,77 +24,59 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/MainWindow.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="365" selection-start-line="365" selection-end-line="365" />
+            <state relative-caret-position="-1168">
+              <caret line="194" column="4" selection-start-line="194" selection-end-line="194" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="165">
+                <caret line="11" selection-start-line="11" selection-end-line="11" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../github.com/therecipe/qt/core/core.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="57010" column="14" selection-start-line="57010" selection-start-column="4" selection-end-line="57010" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/WidgetLog.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="57" selection-start-line="57" selection-end-line="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/WaveBallWidget.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="403" column="48" selection-start-line="403" selection-start-column="48" selection-end-line="403" selection-end-column="48" />
-              <folding>
-                <element signature="e#47#170#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="48">
+              <caret line="361" selection-start-line="361" selection-end-line="361" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/PageHorse.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/PageClear.go">
+        <entry file="file://$PROJECT_DIR$/src/views/PopupWidget.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="106">
-              <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/PageFix.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/PageOptimize.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="43" column="26" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/PageHome.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="152" column="21" selection-start-line="152" selection-start-column="21" selection-end-line="152" selection-end-column="21" />
+              <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="186" selection-end-column="1" />
               <folding>
-                <element signature="e#15#127#0" expanded="true" />
+                <element signature="e#15#91#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../github.com/therecipe/qt/widgets/widgets.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="11077" column="87" selection-start-line="11077" selection-start-column="87" selection-end-line="11077" selection-end-column="87" />
             </state>
           </provider>
         </entry>
@@ -122,6 +101,10 @@
       <find>Store</find>
       <find>b.widget</find>
       <find>120</find>
+      <find>p.</find>
+      <find>WindowStaysOnTopHint</find>
+      <find>p.widget</find>
+      <find>loginWidget</find>
     </findStrings>
     <replaceStrings>
       <replace>PageFix</replace>
@@ -133,6 +116,8 @@
       <replace>uiSubtitle</replace>
       <replace>IconHeight</replace>
       <replace>b</replace>
+      <replace>p.widget.</replace>
+      <replace>p</replace>
     </replaceStrings>
   </component>
   <component name="GOROOT" path="/usr/local/Cellar/go/1.12.1/libexec" />
@@ -160,7 +145,6 @@
         <option value="$PROJECT_DIR$/src/view/MainWindow_test.go" />
         <option value="$PROJECT_DIR$/src/test/MainWindow_test.go" />
         <option value="$PROJECT_DIR$/src/MainWindow_test.go" />
-        <option value="$PROJECT_DIR$/src/main.go" />
         <option value="$PROJECT_DIR$/src/views/RoundButton.go" />
         <option value="$PROJECT_DIR$/src/views/WigetHorse.go" />
         <option value="$PROJECT_DIR$/src/views/WidgetHome.go" />
@@ -170,28 +154,30 @@
         <option value="$PROJECT_DIR$/src/views/HorsePage.go" />
         <option value="$PROJECT_DIR$/qss/stylesheet.qss" />
         <option value="$PROJECT_DIR$/src/views/PageBage.go" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/views/PageActions.go" />
-        <option value="$PROJECT_DIR$/src/views/WidgetLog.go" />
         <option value="$PROJECT_DIR$/src/views/ToolButton.go" />
         <option value="$PROJECT_DIR$/src/views/WidgetInterface.go" />
         <option value="$PROJECT_DIR$/src/views/MainWindow_test.go" />
         <option value="$PROJECT_DIR$/src/views/PageHome_test.go" />
         <option value="$PROJECT_DIR$/src/views/ToolButton_test.go" />
-        <option value="$PROJECT_DIR$/src/views/MainWindow.go" />
-        <option value="$PROJECT_DIR$/src/views/MainWindow.go" />
         <option value="$PROJECT_DIR$/src/views/PageHorse.go" />
         <option value="$PROJECT_DIR$/src/views/PageClear.go" />
         <option value="$PROJECT_DIR$/src/views/PageFix.go" />
         <option value="$PROJECT_DIR$/src/views/PageOptimize.go" />
         <option value="$PROJECT_DIR$/src/views/PageHome.go" />
         <option value="$PROJECT_DIR$/src/views/WaveBallWidget.go" />
+        <option value="$PROJECT_DIR$/src/main.go" />
+        <option value="$PROJECT_DIR$/src/views/WidgetLog.go" />
+        <option value="$PROJECT_DIR$/src/views/MainWindow.go" />
+        <option value="$PROJECT_DIR$/src/views/MainWindow.go" />
+        <option value="$PROJECT_DIR$/src/views/PopupWidget.go" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="90" />
-    <option name="y" value="23" />
+    <option name="x" value="75" />
+    <option name="y" value="88" />
     <option name="width" value="1407" />
     <option name="height" value="842" />
   </component>
@@ -201,7 +187,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -209,37 +194,11 @@
               <item name="go_360_safe" type="b2602c69:ProjectViewProjectNode" />
               <item name="qo_360_safe" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="go_360_safe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qo_360_safe" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go_360_safe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qo_360_safe" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="horse" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go_360_safe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qo_360_safe" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go_360_safe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qo_360_safe" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go_360_safe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qo_360_safe" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -340,26 +299,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="90" y="23" width="1407" height="842" extended-state="0" />
+    <frame x="29" y="217" width="1407" height="842" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49898168" visible="true" weight="0.21465202" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49898168" visible="true" weight="0.21758242" />
       <window_info id="Structure" order="1" sideWeight="0.50101835" side_tool="true" weight="0.26813188" />
       <window_info id="Favorites" order="2" sideWeight="0.50101835" side_tool="true" weight="0.26813188" />
       <window_info id="Repositories" order="3" weight="0.32967034" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299363" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48205128" visible="true" weight="0.3287483" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.46959707" visible="true" weight="0.3287483" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4952381" weight="0.3287483" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4871795" weight="0.3287483" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4959707" weight="0.3287483" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4952381" weight="0.3287483" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4967033" weight="0.3287483" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.51794875" side_tool="true" weight="0.34533334" />
-      <window_info anchor="bottom" id="调试" order="12" sideWeight="0.48205128" weight="0.34525448" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.53040296" side_tool="true" visible="true" weight="0.3287483" />
+      <window_info anchor="bottom" id="调试" order="12" sideWeight="0.47032967" weight="0.34525448" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -481,7 +440,8 @@
     <MESSAGE value="第三节了，界面更好看了" />
     <MESSAGE value="第四节了，更多页面" />
     <MESSAGE value="第五节了，修改注释" />
-    <option name="LAST_COMMIT_MESSAGE" value="第五节了，修改注释" />
+    <MESSAGE value="第六节了，漂亮的波浪球" />
+    <option name="LAST_COMMIT_MESSAGE" value="第六节了，漂亮的波浪球" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -491,13 +451,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/src/views/PageHome.go</url>
-          <line>42</line>
+          <line>41</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/src/views/WaveBallWidget.go</url>
-          <line>203</line>
-          <properties />
+          <line>193</line>
           <option name="timeStamp" value="62" />
         </line-breakpoint>
       </breakpoints>
@@ -562,16 +521,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="135">
-            <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/PageActions.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-320">
@@ -600,16 +549,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/WidgetLog.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding>
-            <element signature="e#234#342#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/page_home.ui">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -621,20 +560,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="10" selection-start-column="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../github.com/therecipe/qt/widgets/widgets.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="11077" column="87" selection-start-line="11077" selection-start-column="87" selection-end-line="11077" selection-end-column="87" />
         </state>
       </provider>
     </entry>
@@ -658,31 +583,38 @@
     <entry file="file://$PROJECT_DIR$/resources/horse/icon_fix.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../github.com/therecipe/qt/core/core.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="55414" column="20" selection-start-line="55414" selection-start-column="4" selection-end-line="55414" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../github.com/therecipe/qt/gui/gui.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="7614" column="55" selection-start-line="7614" selection-start-column="55" selection-end-line="7614" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/MainWindow.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="365" selection-start-line="365" selection-end-line="365" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/PageClear.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
+        <state relative-caret-position="390">
           <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/go/1.12.1/libexec/src/strconv/ftoa.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="57" column="20" lean-forward="true" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/PageHome.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="151" column="21" selection-start-line="151" selection-start-column="21" selection-end-line="151" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/PageOptimize.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -693,37 +625,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/PageOptimize.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="43" column="26" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/PageHorse.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="36" />
+          <caret line="35" selection-start-line="35" selection-end-line="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/PageHome.go">
+    <entry file="file:///usr/local/Cellar/go/1.12.1/libexec/src/time/tick.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="152" column="21" selection-start-line="152" selection-start-column="21" selection-end-line="152" selection-end-column="21" />
-          <folding>
-            <element signature="e#15#127#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="160">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../github.com/therecipe/qt/gui/gui.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="50175" column="41" lean-forward="true" selection-start-line="50175" selection-start-column="41" selection-end-line="50175" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../github.com/therecipe/qt/core/core.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="57010" column="14" selection-start-line="57010" selection-start-column="4" selection-end-line="57010" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/WidgetLog.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/WaveBallWidget.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="403" column="48" selection-start-line="403" selection-start-column="48" selection-end-line="403" selection-end-column="48" />
+        <state relative-caret-position="48">
+          <caret line="361" selection-start-line="361" selection-end-line="361" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../github.com/therecipe/qt/widgets/widgets.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="105518" column="20" selection-start-line="105518" selection-start-column="20" selection-end-line="105518" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/PopupWidget.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="186" selection-end-column="1" />
           <folding>
-            <element signature="e#47#170#0" expanded="true" />
+            <element signature="e#15#91#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/MainWindow.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1168">
+          <caret line="194" column="4" selection-start-line="194" selection-end-line="194" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="165">
+            <caret line="11" selection-start-line="11" selection-end-line="11" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

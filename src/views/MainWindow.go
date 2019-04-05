@@ -44,6 +44,12 @@ type MainWindow struct {
 	// 起始点击坐标
 	startPos  *core.QPoint
 	windowPos *core.QPoint
+
+	// 登陆弹出框
+	loginPopupWidget *PopupWidget
+
+	//
+	loginWidget *WidgetLog
 }
 
 // NewMainWindow 模拟构造函数
@@ -73,7 +79,7 @@ func (mw *MainWindow) Exec() {
 // Init is init variables
 // 初始化一些变量等
 func (mw *MainWindow) init() {
-
+	mw.loginPopupWidget = nil
 }
 
 // Show is to show main Window
@@ -106,12 +112,14 @@ func (mw *MainWindow) showMainWindow() {
 	mw.window.SetMouseTracking(true)
 	// 鼠标移动
 	mw.window.ConnectMouseMoveEvent(func(event *gui.QMouseEvent) {
+		fmt.Println("ConnectMouseMoveEvent")
 		// 鼠标左键按下时处理
 		if event.Button() == core.Qt__LeftButton {
 			mw.window.Move2(mw.windowPos.X()+event.GlobalX()-mw.startPos.X(),
 				mw.windowPos.Y()+event.GlobalY()-mw.startPos.Y())
 		}
 	})
+
 	// 鼠标按下
 	mw.window.ConnectMousePressEvent(func(event *gui.QMouseEvent) {
 		// 左键按下时处理
@@ -122,42 +130,52 @@ func (mw *MainWindow) showMainWindow() {
 		}
 	})
 
-	//mw.window.ConnectPaintEvent(func(vqp *gui.QPaintEvent) {
-	//	//p := qui.Paint//.Paint(vqp)
-	//	//drawF(vqp, window)
-	//	fmt.Println("remove.ConnectPaintEvent")
-	//
-	//	// go func (){
-	//	// 	var paint = gui.NewQPainter()
-	//
-	//	// }
-	//	//var paint1 = gui.NewQPainter(window.device)
-	//
-	//	//gui.QPainter(remove.GetP)
-	//	// var device = gui.NewQBackingStore(window.Render().PaintDevice())
-	//	// var painter = gui.NewQPainter2(window.devi)
-	//	// defer painter.DestroyQPainter()
-	//	var hourColor = gui.NewQColor3(127, 0, 127, 255)   //opaque 255  ...transparent 0
-	//	var minuteColor = gui.NewQColor3(0, 127, 127, 191) //a bit of transparency
-	//	var device = mw.window.BackingStore().PaintDevice()   //window.Painters[0]
-	//	//.PaintEngineDefault().Painter() //gui.NewQPainter2()
-	//	//painter.setS
-	//	var painter = gui.NewQPainter2(device)
-	//	//painter.Begin()
-	//	painter.SetRenderHint(gui.QPainter__Antialiasing, true)
-	//	painter.SetPen2(minuteColor)
-	//	//		painter.SetPen3(core.Qt__SolidLine)
-	//	painter.SetBrush(gui.NewQBrush3(hourColor, core.Qt__SolidPattern))
-	//	painter.DrawLine3(0, 0, 100, 100)
-	//	painter.FillRect2(10, 10, 100, 100, gui.NewQBrush3(hourColor, 10))
-	//	painter.DrawEllipse3(100, 100, 100, 100)
-	//	painter.End()
-	//})
+	mw.window.ConnectEvent(func(event *core.QEvent) bool {
 
+		if event.Type() == core.QEvent__HoverMove {
+			// 获取当前鼠标在屏幕上的绝对坐标
+			var pos = core.NewQPoint2(gui.QCursor_Pos().X(), gui.QCursor_Pos().Y())
+			// 将全局左边转换成window上的坐标
+			var pos2 = mw.window.MapFromGlobal(pos)
+			var x = pos2.X()
+			var y = pos2.Y()
+
+			// 如果是鼠标滑动
+			// 处理鼠标的滑动
+			// 实现的逻辑是，
+			// 当鼠标移动到loginPopupWidget上或者移动到登陆区域，才显示登陆框，否则，如果显示了则隐藏。
+			if mw.loginPopupWidget == nil {
+				// 如果loginPopupWidget不存在，移动到登陆区域，才显示登陆框
+				if mw.loginWidget.Widget().Geometry().Contains3(x, y) {
+					mw.loginPopupWidget = NewPopupWidget(mw.window, ArrowDirectionUp, 90, 700, 90)
+					mw.loginPopupWidget.SetGeometry3(700, 90, 180, 100)
+					mw.loginPopupWidget.Show(1 * 1000)
+					mw.loginPopupWidget.SetWindowFlags(core.Qt__WindowStaysOnTopHint)
+					mw.loginPopupWidget.ShowNormal()
+				}
+			} else {
+				// 如果显示了。鼠标移动到除登录区以及loginPopupWidget区域外时，隐藏loginPopupWidget
+				if !mw.loginWidget.Widget().Geometry().Contains3(x, y) &&
+					!mw.loginPopupWidget.Geometry().Contains3(x, y) {
+
+					mw.loginPopupWidget.Hide2(1*1000, func(widget *PopupWidget) {
+						if mw.loginPopupWidget != nil {
+							mw.loginPopupWidget.HideDefault()
+							//当隐藏后销毁
+							mw.loginPopupWidget.DestroyQWidget()
+							mw.loginPopupWidget = nil
+						}
+					})
+				}
+			}
+		}
+
+		// 如果没有这句，你会发现波浪不动了， 因为你把所有的事件都处理了，下面收不到消息了
+		return mw.window.EventDefault(event)
+	})
 }
 
 // ShowSubViews show all sub views
-//
 // 显示子界面
 func (mw *MainWindow) showSubviews() {
 
@@ -165,6 +183,10 @@ func (mw *MainWindow) showSubviews() {
 	mw.showToolBarsLayout()
 	mw.showStackedWidget()
 
+	//mw.loginPopupWidget = NewPopupWidget (mw.window, ArrowDirectionUp, 100, 700, 90)
+	//mw.loginPopupWidget.SetGeometry2(700, 90, 180, 100)
+	//mw.loginPopupWidget.Show(300)
+	//mw.loginPopupWidget.SetWindowFlags(core.Qt__WindowStaysOnTopHint);
 }
 
 // showTopLayout show top layout
@@ -288,8 +310,8 @@ func (mw *MainWindow) showToolBarsLayout() {
 
 	// 显示我的章子,
 	// 名人作画都会盖个章，则也学学名人，盖个章呗 呵呵。
-	wl := NewWidgetLog(widget)
-	wl.Widget().SetGeometry2(740, 15, 300, 90)
+	mw.loginWidget = NewWidgetLog(widget)
+	mw.loginWidget.Widget().SetGeometry2(740, 15, 300, 90)
 }
 
 // onToolButtonDidClicked
@@ -356,14 +378,11 @@ func getPoint(w float64, widget *widgets.QWidget, angle float64) *core.QPointF {
 // showStackedWidget
 // 显示stackedWidget
 func (mw *MainWindow) showStackedWidget() {
+
 	mw.stackWidget = widgets.NewQStackedWidget(mw.window)
 	mw.stackWidget.SetGeometry2(0, 120, WIDTH, HEIGHT-120)
 	mw.stackWidget.SetCurrentIndex(0)
 	mw.stackWidget.SetStyleSheet("background: #FFFFFF")
-
-	//var widget = widgets.NewQWidget(mw.stackWidget, 0)
-	//widget.SetGeometry2(0, 120, HEIGHT-120, HEIGHT-120)
-	//mw.stackWidget.AddWidget(widget)
 
 	// 接口的初次应用
 	var widgetInterface WidgetInterface
