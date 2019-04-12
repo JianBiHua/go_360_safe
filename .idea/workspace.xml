@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdd8f000-8dcb-4e36-8e97-51258a0f0e9b" name="Default Changelist" comment="第六节了，漂亮的波浪球">
-      <change afterPath="$PROJECT_DIR$/src/views/PopupWidget.go" afterDir="false" />
+    <list default="true" id="bdd8f000-8dcb-4e36-8e97-51258a0f0e9b" name="Default Changelist" comment="第七节了，最后的登陆框。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/MainWindow.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/MainWindow.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/WaveBallWidget.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/WaveBallWidget.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/WidgetLog.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/WidgetLog.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,13 +18,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/MainWindow.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1168">
-              <caret line="194" column="4" selection-start-line="194" selection-end-line="194" selection-end-column="4" />
+            <state relative-caret-position="2775">
+              <caret line="193" column="4" selection-start-line="193" selection-end-line="193" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -45,7 +39,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../github.com/therecipe/qt/core/core.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
+            <state relative-caret-position="855045">
               <caret line="57010" column="14" selection-start-line="57010" selection-start-column="4" selection-end-line="57010" selection-end-column="14" />
             </state>
           </provider>
@@ -54,7 +48,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/WidgetLog.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
+            <state relative-caret-position="795">
               <caret line="57" selection-start-line="57" selection-end-line="57" />
             </state>
           </provider>
@@ -63,7 +57,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/WaveBallWidget.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
+            <state relative-caret-position="5295">
               <caret line="361" selection-start-line="361" selection-end-line="361" selection-end-column="37" />
             </state>
           </provider>
@@ -72,11 +66,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/PopupWidget.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="186" selection-end-column="1" />
-              <folding>
-                <element signature="e#15#91#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1965">
+              <caret line="137" column="26" selection-start-line="137" selection-start-column="26" selection-end-line="137" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../../github.com/therecipe/qt/gui/gui.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="49950" lean-forward="true" selection-start-line="49950" selection-end-line="49950" />
             </state>
           </provider>
         </entry>
@@ -176,8 +176,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="75" />
-    <option name="y" value="88" />
+    <option name="x" value="79" />
+    <option name="y" value="23" />
     <option name="width" value="1407" />
     <option name="height" value="842" />
   </component>
@@ -187,6 +187,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -198,7 +199,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -215,7 +215,7 @@
     <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -299,16 +299,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="29" y="217" width="1407" height="842" extended-state="0" />
-    <editor active="true" />
+    <frame x="79" y="23" width="1407" height="842" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49898168" visible="true" weight="0.21758242" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49898168" visible="true" weight="0.22051282" />
       <window_info id="Structure" order="1" sideWeight="0.50101835" side_tool="true" weight="0.26813188" />
       <window_info id="Favorites" order="2" sideWeight="0.50101835" side_tool="true" weight="0.26813188" />
       <window_info id="Repositories" order="3" weight="0.32967034" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299363" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.46959707" visible="true" weight="0.3287483" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.46959707" weight="0.3287483" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -441,7 +440,8 @@
     <MESSAGE value="第四节了，更多页面" />
     <MESSAGE value="第五节了，修改注释" />
     <MESSAGE value="第六节了，漂亮的波浪球" />
-    <option name="LAST_COMMIT_MESSAGE" value="第六节了，漂亮的波浪球" />
+    <MESSAGE value="第七节了，最后的登陆框。" />
+    <option name="LAST_COMMIT_MESSAGE" value="第七节了，最后的登陆框。" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -639,34 +639,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../github.com/therecipe/qt/gui/gui.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="50175" column="41" lean-forward="true" selection-start-line="50175" selection-start-column="41" selection-end-line="50175" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../github.com/therecipe/qt/core/core.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="57010" column="14" selection-start-line="57010" selection-start-column="4" selection-end-line="57010" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/WidgetLog.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/WaveBallWidget.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="361" selection-start-line="361" selection-end-line="361" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../github.com/therecipe/qt/widgets/widgets.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
@@ -674,20 +646,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/PopupWidget.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="186" selection-end-column="1" />
-          <folding>
-            <element signature="e#15#91#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/MainWindow.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1168">
-          <caret line="194" column="4" selection-start-line="194" selection-end-line="194" selection-end-column="4" />
+        <state relative-caret-position="2775">
+          <caret line="193" column="4" selection-start-line="193" selection-end-line="193" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -698,6 +660,41 @@
             <caret line="11" selection-start-line="11" selection-end-line="11" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../github.com/therecipe/qt/core/core.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855045">
+          <caret line="57010" column="14" selection-start-line="57010" selection-start-column="4" selection-end-line="57010" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/WidgetLog.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/WaveBallWidget.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5295">
+          <caret line="361" selection-start-line="361" selection-end-line="361" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/PopupWidget.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1965">
+          <caret line="137" column="26" selection-start-line="137" selection-start-column="26" selection-end-line="137" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../github.com/therecipe/qt/gui/gui.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="49950" lean-forward="true" selection-start-line="49950" selection-end-line="49950" />
         </state>
       </provider>
     </entry>
